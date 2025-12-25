@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import SectionTitle from '../components/SectionTitle'
 import ProductCard from '../components/ProductCard'
+import TestimonialCard from '../components/TestimonialCard'
+import ScrollReveal from '../components/ScrollReveal'
 import productsData from '../data/products.json'
 
 const Home = () => {
@@ -15,6 +17,50 @@ const Home = () => {
     { number: '100+', label: 'Clients satisfaits' },
   ]
 
+  const testimonials = [
+    {
+      text: "SONOTIC a fourni des tuyaux de qualité exceptionnelle pour notre projet d'infrastructure. Leur expertise et leur service client sont remarquables.",
+      name: 'Ahmed Benali',
+      role: 'Directeur de Projet',
+      initials: 'AB',
+    },
+    {
+      text: "Nous travaillons avec SONOTIC depuis 10 ans. Leur fiabilité et la qualité de leurs produits en font notre partenaire de confiance.",
+      name: 'Fatima Alami',
+      role: 'Ingénieur en Chef',
+      initials: 'FA',
+    },
+    {
+      text: "Excellent service et produits conformes aux normes. SONOTIC comprend nos besoins et propose toujours les meilleures solutions.",
+      name: 'Mohammed Tazi',
+      role: 'Responsable Infrastructure',
+      initials: 'MT',
+    },
+  ]
+
+  const features = [
+    {
+      icon: '✓',
+      title: 'Qualité Certifiée',
+      description: 'Produits conformes aux normes internationales ISO 9001',
+    },
+    {
+      icon: '🚚',
+      title: 'Livraison Rapide',
+      description: 'Service de livraison efficace dans tout le Maroc',
+    },
+    {
+      icon: '🛠️',
+      title: 'Support Technique',
+      description: 'Équipe d\'experts à votre disposition pour vous conseiller',
+    },
+    {
+      icon: '💼',
+      title: 'Solutions Sur Mesure',
+      description: 'Adaptation à vos besoins spécifiques et projets personnalisés',
+    },
+  ]
+
   return (
     <div>
       {/* Hero Section */}
@@ -25,84 +71,125 @@ const Home = () => {
       />
 
       {/* Introduction Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-industrial-dark mb-6">
-              Bienvenue chez SONOTIC
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-block mb-6">
+              <span className="bg-gradient-to-r from-industrial-blue to-industrial-dark text-white px-6 py-2 rounded-full text-sm font-semibold">
+                Leader au Maroc depuis 25 ans
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-industrial-dark mb-8">
+              Bienvenue chez <span className="bg-gradient-to-r from-industrial-blue to-industrial-dark bg-clip-text text-transparent">SONOTIC</span>
             </h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Depuis plus de 25 ans, SONOTIC est le partenaire de confiance pour
-              tous vos besoins en tuyaux industriels au Maroc. Nous fournissons
-              des solutions durables et performantes pour l'approvisionnement en
-              eau, l'assainissement, l'irrigation et les infrastructures
-              industrielles.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Notre expertise couvre une large gamme de matériaux : PVC, HDPE,
-              acier et béton, répondant aux normes internationales les plus
-              strictes.
-            </p>
+            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+              <p>
+                Depuis plus de 25 ans, SONOTIC est le partenaire de confiance pour
+                tous vos besoins en tuyaux industriels au Maroc. Nous fournissons
+                des solutions durables et performantes pour l'approvisionnement en
+                eau, l'assainissement, l'irrigation et les infrastructures
+                industrielles.
+              </p>
+              <p>
+                Notre expertise couvre une large gamme de matériaux : <strong className="text-industrial-blue">PVC</strong>, <strong className="text-industrial-blue">HDPE</strong>,
+                <strong className="text-industrial-blue"> acier</strong> et <strong className="text-industrial-blue">béton</strong>, répondant aux normes internationales les plus
+                strictes.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Product Categories Preview */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             title="Nos Produits"
-            subtitle="Découvrez notre gamme complète de tuyaux industriels"
+            subtitle="Découvrez notre gamme complète de tuyaux industriels de qualité supérieure"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-          <div className="text-center mt-10">
-            <Link to="/products" className="btn-primary">
+          <div className="text-center">
+            <Link to="/products" className="btn-primary inline-flex items-center gap-2">
               Voir tous les produits
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Key Numbers Section */}
-      <section className="py-16 bg-industrial-blue text-white">
+      {/* Features Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            title="SONOTIC en Chiffres"
-            subtitle="Des résultats qui parlent d'eux-mêmes"
+            title="Pourquoi Choisir SONOTIC"
+            subtitle="Des avantages qui font la différence"
           />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center transform hover:scale-110 transition-transform duration-300"
-              >
-                <div className="text-5xl font-bold mb-2">{stat.number}</div>
-                <div className="text-lg text-gray-200">{stat.label}</div>
-              </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <ScrollReveal key={index} delay={index * 100}>
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-industrial-blue to-industrial-dark rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-industrial-dark mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="py-16 bg-white">
+      {/* Key Numbers Section */}
+      <section className="py-20 gradient-bg text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-1/4 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4">SONOTIC en Chiffres</h2>
+            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+              Des résultats qui parlent d'eux-mêmes
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <ScrollReveal key={index} delay={index * 100}>
+                <div className="text-center transform hover:scale-110 transition-all duration-300 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10">
+                  <div className="text-6xl font-extrabold mb-3 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
+                    {stat.number}
+                  </div>
+                  <div className="text-lg text-gray-200 font-medium">{stat.label}</div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            title="Nos Partenaires"
-            subtitle="Nous travaillons avec les meilleurs"
+            title="Témoignages Clients"
+            subtitle="Ce que nos clients disent de nous"
           />
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60">
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={i}
-                className="bg-gray-200 h-24 rounded-lg flex items-center justify-center"
-              >
-                <span className="text-gray-400 text-sm">Partenaire {i + 1}</span>
-              </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <ScrollReveal key={index} delay={index * 150}>
+                <TestimonialCard testimonial={testimonial} />
+              </ScrollReveal>
             ))}
           </div>
         </div>

@@ -16,12 +16,17 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50" role="navigation" aria-label="Navigation principale">
+    <nav className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100" role="navigation" aria-label="Navigation principale">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2" aria-label="SONOTIC - Retour à l'accueil">
-            <div className="text-2xl font-bold text-industrial-blue">
+          <Link to="/" className="flex items-center space-x-3" aria-label="SONOTIC - Retour à l'accueil">
+            <img 
+              src="/assets/logo.jpeg" 
+              alt="SONOTIC Logo" 
+              className="h-12 w-auto"
+            />
+            <div className="text-2xl font-bold text-industrial-blue hidden sm:block">
               SONOTIC
             </div>
           </Link>
@@ -32,10 +37,10 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 relative ${
                   isActive(link.path)
-                    ? 'text-industrial-blue border-b-2 border-industrial-blue'
-                    : 'text-gray-700 hover:text-industrial-blue'
+                    ? 'text-industrial-blue bg-gradient-to-r from-industrial-blue/10 to-industrial-dark/10'
+                    : 'text-gray-700 hover:text-industrial-blue hover:bg-gray-50'
                 }`}
               >
                 {link.label}

@@ -9,30 +9,89 @@ const Contact = () => {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [errors, setErrors] = useState({})
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return re.test(email)
   }
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData({
+      ...formData,
+      [name]: value,
+    })
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: '',
+      })
+    }
+  }
+
+  const validateForm = () => {
+    const newErrors = {}
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Le nom est requis'
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'L\'email est requis'
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = 'Veuillez entrer un email valide'
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Le message est requis'
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Le message doit contenir au moins 10 caractères'
+    }
+    
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    
+    if (!validateForm()) {
+      return
+    }
+
+    setIsSubmitting(true)
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    
     // Here you would typically send the form data to a backend
     console.log('Form submitted:', formData)
+    
+    // For now, we'll use mailto as a fallback
+    const subject = encodeURIComponent(`Contact depuis le site SONOTIC - ${formData.name}`)
+    const body = encodeURIComponent(formData.message)
+    window.location.href = `mailto:sonotic@hotmail.com?subject=${subject}&body=${body}`
+    
     setSubmitted(true)
     setFormData({ name: '', email: '', message: '' })
+    setIsSubmitting(false)
     setTimeout(() => setSubmitted(false), 5000)
   }
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-industrial-blue text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contactez-nous</h1>
-          <p className="text-xl text-gray-200">
+      <section className="gradient-bg text-white py-24 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">Contactez-nous</h1>
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Nous sommes là pour répondre à toutes vos questions
           </p>
         </div>
@@ -43,21 +102,25 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <h2 className="text-2xl font-bold text-industrial-dark mb-6">
+            <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
+              <h2 className="text-3xl font-bold text-industrial-dark mb-8">
                 Envoyez-nous un message
               </h2>
               {submitted && (
-                <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
-                  Merci pour votre message ! Nous vous répondrons dans les plus
-                  brefs délais.
+                <div className="mb-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 text-green-700 rounded-xl">
+                  <div className="flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="font-semibold">Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.</span>
+                  </div>
                 </div>
               )}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
                   >
                     Nom complet *
                   </label>
@@ -65,17 +128,23 @@ const Contact = () => {
                     type="text"
                     id="name"
                     name="name"
-                    required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-industrial-blue focus:border-transparent"
+                    className={`w-full px-5 py-3 border-2 rounded-xl focus:ring-2 focus:ring-industrial-blue transition-all duration-300 ${
+                      errors.name
+                        ? 'border-red-300 focus:border-red-500'
+                        : 'border-gray-200 focus:border-industrial-blue'
+                    }`}
                     placeholder="Votre nom"
                   />
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+                  )}
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
                   >
                     Email *
                   </label>
@@ -83,67 +152,114 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
-                    required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-industrial-blue focus:border-transparent"
+                    className={`w-full px-5 py-3 border-2 rounded-xl focus:ring-2 focus:ring-industrial-blue transition-all duration-300 ${
+                      errors.email
+                        ? 'border-red-300 focus:border-red-500'
+                        : 'border-gray-200 focus:border-industrial-blue'
+                    }`}
                     placeholder="votre.email@example.com"
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                  )}
                 </div>
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
                   >
                     Message *
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    required
                     rows="6"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-industrial-blue focus:border-transparent"
+                    className={`w-full px-5 py-3 border-2 rounded-xl focus:ring-2 focus:ring-industrial-blue transition-all duration-300 resize-none ${
+                      errors.message
+                        ? 'border-red-300 focus:border-red-500'
+                        : 'border-gray-200 focus:border-industrial-blue'
+                    }`}
                     placeholder="Votre message..."
                   ></textarea>
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+                  )}
+                  <p className="mt-1 text-xs text-gray-500">
+                    {formData.message.length} caractères
+                  </p>
                 </div>
-                <button type="submit" className="btn-primary w-full">
-                  Envoyer le message
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Envoi en cours...
+                    </>
+                  ) : (
+                    'Envoyer le message'
+                  )}
                 </button>
               </form>
             </div>
 
             {/* Company Info */}
             <div className="space-y-8">
-              <div className="bg-white p-8 rounded-lg shadow-md">
-                <h2 className="text-2xl font-bold text-industrial-dark mb-6">
+              <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
+                <h2 className="text-3xl font-bold text-industrial-dark mb-8">
                   Informations de Contact
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="text-industrial-blue text-xl mr-4">📍</div>
+                    <div className="text-industrial-blue text-2xl mr-4 flex-shrink-0">📍</div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Adresse</h3>
-                      <p className="text-gray-600">
-                        Casablanca, Maroc
-                        <br />
-                        (Adresse complète à compléter)
+                      <h3 className="font-semibold text-gray-900 mb-1">Adresse</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        56, Rue des Gaves (Roches Noires)<br />
+                        Casablanca 20290 - Maroc
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="text-industrial-blue text-xl mr-4">📞</div>
+                    <div className="text-industrial-blue text-2xl mr-4 flex-shrink-0">📞</div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Téléphone</h3>
-                      <p className="text-gray-600">+212 XXX XXX XXX</p>
+                      <h3 className="font-semibold text-gray-900 mb-1">Téléphone</h3>
+                      <div className="space-y-1">
+                        <p className="text-gray-600">
+                          <a href="tel:+212522244993" className="hover:text-industrial-blue transition-colors font-medium">05 22 24 49 93</a>
+                        </p>
+                        <p className="text-gray-600">
+                          <a href="tel:+212522246623" className="hover:text-industrial-blue transition-colors font-medium">05 22 24 66 23</a>
+                        </p>
+                        <p className="text-gray-600">
+                          <a href="tel:+212522246620" className="hover:text-industrial-blue transition-colors font-medium">05 22 24 66 20</a>
+                        </p>
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="text-industrial-blue text-xl mr-4">✉️</div>
+                    <div className="text-industrial-blue text-2xl mr-4 flex-shrink-0">📠</div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Email</h3>
-                      <p className="text-gray-600">contact@sonotic.ma</p>
+                      <h3 className="font-semibold text-gray-900 mb-1">Fax</h3>
+                      <p className="text-gray-600">05 22 24 49 94</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="text-industrial-blue text-2xl mr-4 flex-shrink-0">✉️</div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
+                      <p className="text-gray-600">
+                        <a href="mailto:sonotic@hotmail.com" className="hover:text-industrial-blue transition-colors font-medium">sonotic@hotmail.com</a>
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -162,15 +278,23 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="bg-white p-8 rounded-lg shadow-md">
-                <h2 className="text-2xl font-bold text-industrial-dark mb-4">
+              {/* Map */}
+              <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
+                <h2 className="text-2xl font-bold text-industrial-dark mb-6">
                   Notre Localisation
                 </h2>
-                <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-                  <p className="text-gray-500">
-                    Carte Google Maps à intégrer
-                  </p>
+                <div className="rounded-xl overflow-hidden shadow-lg border-2 border-gray-200">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.202849478001!2d-7.5838764!3d33.6000409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd7c4d7ba277%3A0xaa7941c611135361!2sSONOTIC!5e0!3m2!1sfr!2sma!4v1766693263517!5m2!1sfr!2sma"
+                    width="100%"
+                    height="450"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Localisation SONOTIC"
+                    className="w-full"
+                  ></iframe>
                 </div>
               </div>
             </div>

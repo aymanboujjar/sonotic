@@ -27,17 +27,21 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-industrial-blue text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">À Propos de SONOTIC</h1>
-          <p className="text-xl text-gray-200">
+      <section className="gradient-bg text-white py-24 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">À Propos de SONOTIC</h1>
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Votre partenaire de confiance pour l'infrastructure industrielle au Maroc
           </p>
         </div>
       </section>
 
       {/* Company History */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
             title="Notre Histoire"
@@ -45,7 +49,7 @@ const About = () => {
           />
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg mx-auto">
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-gray-700 leading-relaxed mb-6 text-lg">
                 Fondée il y a plus de 25 ans, SONOTIC s'est imposée comme un
                 leader dans le secteur des tuyaux industriels au Maroc. Notre
                 entreprise a été créée avec une vision claire : fournir des
@@ -71,12 +75,15 @@ const About = () => {
       {/* Mission & Vision */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white p-8 rounded-lg shadow-md">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-industrial-blue to-industrial-dark rounded-xl flex items-center justify-center mb-6">
+                <span className="text-3xl text-white">🎯</span>
+              </div>
               <h3 className="text-2xl font-bold text-industrial-blue mb-4">
                 Notre Mission
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed text-lg">
                 Fournir des solutions de tuyaux industriels de la plus haute
                 qualité, en répondant aux besoins spécifiques de nos clients
                 marocains. Nous nous engageons à offrir des produits durables,
@@ -84,11 +91,14 @@ const About = () => {
                 maintenant un service client exceptionnel.
               </p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-industrial-blue to-industrial-dark rounded-xl flex items-center justify-center mb-6">
+                <span className="text-3xl text-white">👁️</span>
+              </div>
               <h3 className="text-2xl font-bold text-industrial-blue mb-4">
                 Notre Vision
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed text-lg">
                 Être le leader incontesté du marché marocain des tuyaux
                 industriels, reconnu pour notre excellence, notre innovation et
                 notre contribution au développement des infrastructures du pays.
@@ -111,15 +121,15 @@ const About = () => {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-gray-50 p-6 rounded-lg text-center hover:shadow-lg transition-shadow duration-300"
+                className="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
               >
-                <div className="text-4xl text-industrial-blue mb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-industrial-blue to-industrial-dark rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl text-white">
                   {value.icon}
                 </div>
-                <h4 className="text-xl font-semibold text-industrial-dark mb-2">
+                <h4 className="text-xl font-bold text-industrial-dark mb-3">
                   {value.title}
                 </h4>
-                <p className="text-gray-600">{value.description}</p>
+                <p className="text-gray-600 leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
@@ -127,13 +137,17 @@ const About = () => {
       </section>
 
       {/* Morocco Focus */}
-      <section className="py-16 bg-industrial-blue text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 gradient-bg text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-8">
               Expertise Locale, Standards Internationaux
             </h2>
-            <p className="text-lg text-gray-200 leading-relaxed">
+            <p className="text-xl text-gray-200 leading-relaxed">
               En tant qu'entreprise marocaine, nous comprenons parfaitement les
               défis et les besoins spécifiques du marché local. Notre connaissance
               approfondie du terrain, combinée à notre respect des normes
