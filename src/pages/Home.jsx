@@ -10,13 +10,6 @@ const Home = () => {
   // Get first 4 products for preview
   const featuredProducts = productsData.slice(0, 4)
 
-  const stats = [
-    { number: '25+', label: "Années d'expérience" },
-    { number: '500+', label: 'Projets réalisés' },
-    { number: 'ISO 9001', label: 'Certification qualité' },
-    { number: '100+', label: 'Clients satisfaits' },
-  ]
-
   const testimonials = [
     {
       text: "SONOTIC a fourni des tuyaux de qualité exceptionnelle pour notre projet d'infrastructure. Leur expertise et leur service client sont remarquables.",
@@ -143,34 +136,6 @@ const Home = () => {
                   <p className="text-gray-600 leading-relaxed">
                     {feature.description}
                   </p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Key Numbers Section */}
-      <section className="py-20 gradient-bg text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-1/4 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-4">SONOTIC en Chiffres</h2>
-            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-              Des résultats qui parlent d'eux-mêmes
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <ScrollReveal key={index} delay={index * 100}>
-                <div className="text-center transform hover:scale-110 transition-all duration-300 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10">
-                  <div className="text-6xl font-extrabold mb-3 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
-                    {stat.number}
-                  </div>
-                  <div className="text-lg text-gray-200 font-medium">{stat.label}</div>
                 </div>
               </ScrollReveal>
             ))}

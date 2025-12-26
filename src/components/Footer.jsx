@@ -46,6 +46,12 @@ const Footer = () => {
                 <span>05 22 24 49 94</span>
               </p>
               <p className="flex items-center gap-2">
+                <span className="text-xl">💬</span>
+                <a href="https://wa.me/212661748378" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  WhatsApp: 06 61 74 83 78
+                </a>
+              </p>
+              <p className="flex items-center gap-2">
                 <span className="text-xl">✉️</span>
                 <a href="mailto:sonotic@hotmail.com" className="hover:text-white transition-colors">sonotic@hotmail.com</a>
               </p>

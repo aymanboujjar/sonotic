@@ -43,3 +43,5 @@ const ScrollReveal = ({ children, delay = 0, className = '' }) => {
 
 export default ScrollReveal
 
+
+
