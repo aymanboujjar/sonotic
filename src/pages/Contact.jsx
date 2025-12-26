@@ -1,7 +1,11 @@
 import { useState } from 'react'
 import SectionTitle from '../components/SectionTitle'
+import { TransText } from '../components/TransText'
+import { translations } from '../data/translations'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Contact = () => {
+  const { selectedLanguage } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,19 +40,19 @@ const Contact = () => {
     const newErrors = {}
     
     if (!formData.name.trim()) {
-      newErrors.name = 'Le nom est requis'
+      newErrors.name = translations.contact.errors.nameRequired[selectedLanguage]
     }
     
     if (!formData.email.trim()) {
-      newErrors.email = 'L\'email est requis'
+      newErrors.email = translations.contact.errors.emailRequired[selectedLanguage]
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = 'Veuillez entrer un email valide'
+      newErrors.email = translations.contact.errors.emailInvalid[selectedLanguage]
     }
     
     if (!formData.message.trim()) {
-      newErrors.message = 'Le message est requis'
+      newErrors.message = translations.contact.errors.messageRequired[selectedLanguage]
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Le message doit contenir au moins 10 caractères'
+      newErrors.message = translations.contact.errors.messageMin[selectedLanguage]
     }
     
     setErrors(newErrors)
@@ -90,9 +94,19 @@ const Contact = () => {
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-white rounded-full blur-3xl"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">Contactez-nous</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+            <TransText
+              fr={translations.contact.title.fr}
+              ar={translations.contact.title.ar}
+              en={translations.contact.title.en}
+            />
+          </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Nous sommes là pour répondre à toutes vos questions
+            <TransText
+              fr={translations.contact.subtitle.fr}
+              ar={translations.contact.subtitle.ar}
+              en={translations.contact.subtitle.en}
+            />
           </p>
         </div>
       </section>
@@ -104,7 +118,11 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
               <h2 className="text-3xl font-bold text-industrial-dark mb-8">
-                Envoyez-nous un message
+                <TransText
+                  fr={translations.contact.formTitle.fr}
+                  ar={translations.contact.formTitle.ar}
+                  en={translations.contact.formTitle.en}
+                />
               </h2>
               {submitted && (
                 <div className="mb-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 text-green-700 rounded-xl">
@@ -112,7 +130,13 @@ const Contact = () => {
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span className="font-semibold">Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.</span>
+                    <span className="font-semibold">
+                      <TransText
+                        fr={translations.contact.success.fr}
+                        ar={translations.contact.success.ar}
+                        en={translations.contact.success.en}
+                      />
+                    </span>
                   </div>
                 </div>
               )}
@@ -122,7 +146,11 @@ const Contact = () => {
                     htmlFor="name"
                     className="block text-sm font-semibold text-gray-700 mb-2"
                   >
-                    Nom complet *
+                    <TransText
+                      fr={translations.contact.name.fr}
+                      ar={translations.contact.name.ar}
+                      en={translations.contact.name.en}
+                    /> *
                   </label>
                   <input
                     type="text"
@@ -135,7 +163,7 @@ const Contact = () => {
                         ? 'border-red-300 focus:border-red-500'
                         : 'border-gray-200 focus:border-industrial-blue'
                     }`}
-                    placeholder="Votre nom"
+                    placeholder={translations.contact.name[selectedLanguage]}
                   />
                   {errors.name && (
                     <p className="mt-1 text-sm text-red-600">{errors.name}</p>
@@ -146,7 +174,11 @@ const Contact = () => {
                     htmlFor="email"
                     className="block text-sm font-semibold text-gray-700 mb-2"
                   >
-                    Email *
+                    <TransText
+                      fr={translations.contact.email.fr}
+                      ar={translations.contact.email.ar}
+                      en={translations.contact.email.en}
+                    /> *
                   </label>
                   <input
                     type="email"
@@ -159,7 +191,7 @@ const Contact = () => {
                         ? 'border-red-300 focus:border-red-500'
                         : 'border-gray-200 focus:border-industrial-blue'
                     }`}
-                    placeholder="votre.email@example.com"
+                    placeholder="email@example.com"
                   />
                   {errors.email && (
                     <p className="mt-1 text-sm text-red-600">{errors.email}</p>
@@ -170,7 +202,11 @@ const Contact = () => {
                     htmlFor="message"
                     className="block text-sm font-semibold text-gray-700 mb-2"
                   >
-                    Message *
+                    <TransText
+                      fr={translations.contact.message.fr}
+                      ar={translations.contact.message.ar}
+                      en={translations.contact.message.en}
+                    /> *
                   </label>
                   <textarea
                     id="message"
@@ -183,13 +219,17 @@ const Contact = () => {
                         ? 'border-red-300 focus:border-red-500'
                         : 'border-gray-200 focus:border-industrial-blue'
                     }`}
-                    placeholder="Votre message..."
+                    placeholder={translations.contact.message[selectedLanguage]}
                   ></textarea>
                   {errors.message && (
                     <p className="mt-1 text-sm text-red-600">{errors.message}</p>
                   )}
                   <p className="mt-1 text-xs text-gray-500">
-                    {formData.message.length} caractères
+                    {formData.message.length} <TransText
+                      fr={translations.contact.characters.fr}
+                      ar={translations.contact.characters.ar}
+                      en={translations.contact.characters.en}
+                    />
                   </p>
                 </div>
                 <button
@@ -203,10 +243,18 @@ const Contact = () => {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      Envoi en cours...
+                      <TransText
+                        fr={translations.contact.sending.fr}
+                        ar={translations.contact.sending.ar}
+                        en={translations.contact.sending.en}
+                      />
                     </>
                   ) : (
-                    'Envoyer le message'
+                    <TransText
+                      fr={translations.contact.send.fr}
+                      ar={translations.contact.send.ar}
+                      en={translations.contact.send.en}
+                    />
                   )}
                 </button>
               </form>
@@ -216,13 +264,23 @@ const Contact = () => {
             <div className="space-y-8">
               <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
                 <h2 className="text-3xl font-bold text-industrial-dark mb-8">
-                  Informations de Contact
+                  <TransText
+                    fr={translations.contact.contactInfo.fr}
+                    ar={translations.contact.contactInfo.ar}
+                    en={translations.contact.contactInfo.en}
+                  />
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <div className="text-industrial-blue text-2xl mr-4 flex-shrink-0">📍</div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">Adresse</h3>
+                      <h3 className="font-semibold text-gray-900 mb-1">
+                        <TransText
+                          fr={translations.contact.address.fr}
+                          ar={translations.contact.address.ar}
+                          en={translations.contact.address.en}
+                        />
+                      </h3>
                       <p className="text-gray-600 leading-relaxed">
                         56, Rue des Gaves (Roches Noires)<br />
                         Casablanca 20290 - Maroc
@@ -232,7 +290,13 @@ const Contact = () => {
                   <div className="flex items-start">
                     <div className="text-industrial-blue text-2xl mr-4 flex-shrink-0">📞</div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">Téléphone</h3>
+                      <h3 className="font-semibold text-gray-900 mb-1">
+                        <TransText
+                          fr={translations.contact.phone.fr}
+                          ar={translations.contact.phone.ar}
+                          en={translations.contact.phone.en}
+                        />
+                      </h3>
                       <div className="space-y-1">
                         <p className="text-gray-600">
                           <a href="tel:+212522244993" className="hover:text-industrial-blue transition-colors font-medium">05 22 24 49 93</a>
@@ -249,14 +313,26 @@ const Contact = () => {
                   <div className="flex items-start">
                     <div className="text-industrial-blue text-2xl mr-4 flex-shrink-0">📠</div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">Fax</h3>
+                      <h3 className="font-semibold text-gray-900 mb-1">
+                        <TransText
+                          fr={translations.contact.fax.fr}
+                          ar={translations.contact.fax.ar}
+                          en={translations.contact.fax.en}
+                        />
+                      </h3>
                       <p className="text-gray-600">05 22 24 49 94</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <div className="text-industrial-blue text-2xl mr-4 flex-shrink-0">💬</div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">WhatsApp</h3>
+                      <h3 className="font-semibold text-gray-900 mb-1">
+                        <TransText
+                          fr={translations.contact.whatsapp.fr}
+                          ar={translations.contact.whatsapp.ar}
+                          en={translations.contact.whatsapp.en}
+                        />
+                      </h3>
                       <p className="text-gray-600">
                         <a 
                           href="https://wa.me/212661748378" 
@@ -275,7 +351,13 @@ const Contact = () => {
                   <div className="flex items-start">
                     <div className="text-industrial-blue text-2xl mr-4 flex-shrink-0">✉️</div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
+                      <h3 className="font-semibold text-gray-900 mb-1">
+                        <TransText
+                          fr={translations.contact.emailLabel.fr}
+                          ar={translations.contact.emailLabel.ar}
+                          en={translations.contact.emailLabel.en}
+                        />
+                      </h3>
                       <p className="text-gray-600">
                         <a href="mailto:sonotic@hotmail.com" className="hover:text-industrial-blue transition-colors font-medium">sonotic@hotmail.com</a>
                       </p>
@@ -285,7 +367,11 @@ const Contact = () => {
                     <div className="text-industrial-blue text-xl mr-4">🕒</div>
                     <div>
                       <h3 className="font-semibold text-gray-900">
-                        Heures d'ouverture
+                        <TransText
+                          fr={translations.contact.hours.fr}
+                          ar={translations.contact.hours.ar}
+                          en={translations.contact.hours.en}
+                        />
                       </h3>
                       <p className="text-gray-600">
                         Lun–Ven : 8h30–12h / 14h–18h30

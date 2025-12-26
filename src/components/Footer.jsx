@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { TransText } from './TransText'
+import { translations } from '../data/translations'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -25,8 +27,11 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed text-lg">
-              Spécialiste marocain des tuyaux industriels. Solutions fiables pour
-              l'infrastructure moderne.
+              <TransText
+                fr={translations.footer.description.fr}
+                ar={translations.footer.description.ar}
+                en={translations.footer.description.en}
+              />
             </p>
             <div className="space-y-3 text-gray-300">
               <p className="flex items-start gap-3">
@@ -60,7 +65,13 @@ const Footer = () => {
 
           {/* Map Location */}
           <div>
-            <h4 className="text-xl font-bold mb-6">Notre Localisation</h4>
+            <h4 className="text-xl font-bold mb-6">
+              <TransText
+                fr={translations.footer.location.fr}
+                ar={translations.footer.location.ar}
+                en={translations.footer.location.en}
+              />
+            </h4>
             <div className="rounded-xl overflow-hidden shadow-lg border-2 border-white/20">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.202849478001!2d-7.5838764!3d33.6000409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd7c4d7ba277%3A0xaa7941c611135361!2sSONOTIC!5e0!3m2!1sfr!2sma!4v1766693263517!5m2!1sfr!2sma"
@@ -78,7 +89,11 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/20 mt-12 pt-8 text-center text-gray-300">
-          <p>&copy; {currentYear} SONOTIC. Tous droits réservés.</p>
+          <p>&copy; {currentYear} SONOTIC. <TransText
+            fr={translations.footer.rights.fr}
+            ar={translations.footer.rights.ar}
+            en={translations.footer.rights.en}
+          /></p>
         </div>
       </div>
     </footer>

@@ -1,3 +1,5 @@
+import { TransText } from './TransText'
+
 const TestimonialCard = ({ testimonial }) => {
   return (
     <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
@@ -14,7 +16,7 @@ const TestimonialCard = ({ testimonial }) => {
         ))}
       </div>
       <p className="text-gray-700 mb-6 leading-relaxed italic flex-grow">
-        "{testimonial.text}"
+        "<TransText fr={testimonial.text.fr} ar={testimonial.text.ar} en={testimonial.text.en} />"
       </p>
       <div className="flex items-center flex-shrink-0">
         <div className="w-12 h-12 bg-gradient-to-br from-industrial-blue to-industrial-dark rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
@@ -22,7 +24,9 @@ const TestimonialCard = ({ testimonial }) => {
         </div>
         <div>
           <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-          <p className="text-sm text-gray-600">{testimonial.role}</p>
+          <p className="text-sm text-gray-600">
+            <TransText fr={testimonial.role.fr} ar={testimonial.role.ar} en={testimonial.role.en} />
+          </p>
         </div>
       </div>
     </div>

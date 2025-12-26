@@ -1,29 +1,23 @@
 import SectionTitle from '../components/SectionTitle'
+import { TransText } from '../components/TransText'
+import { translations } from '../data/translations'
 
 const Projects = () => {
   const useCases = [
     {
-      title: 'Approvisionnement en Eau',
-      description:
-        'Réseaux d\'eau potable pour villes et communautés. Solutions durables pour garantir un accès fiable à l\'eau.',
+      key: 'water',
       image: '/assets/tuyau-flexible-hydraulique.jpg',
     },
     {
-      title: 'Assainissement',
-      description:
-        'Systèmes d\'évacuation et de traitement des eaux usées. Infrastructure moderne pour un environnement sain.',
+      key: 'sanitation',
       image: '/assets/p193781.png',
     },
     {
-      title: 'Infrastructure Industrielle',
-      description:
-        'Tuyaux pour applications industrielles exigeantes. Résistance aux produits chimiques et aux hautes pressions.',
+      key: 'industrial',
       image: '/assets/castolin-tuyaux-jumeles-oxygeneacetylene-image-532655.webp',
     },
     {
-      title: 'Irrigation Agricole',
-      description:
-        'Systèmes d\'irrigation efficaces pour l\'agriculture moderne. Optimisation de l\'utilisation de l\'eau.',
+      key: 'agriculture',
       image: '/assets/vidaxl-tuyau-plat-20-m-3-pvc-7994386.jpg',
     },
   ]
@@ -49,9 +43,19 @@ const Projects = () => {
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-white rounded-full blur-3xl"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">Nos Projets</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+            <TransText
+              fr={translations.projects.title.fr}
+              ar={translations.projects.title.ar}
+              en={translations.projects.title.en}
+            />
+          </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Applications et réalisations dans différents secteurs
+            <TransText
+              fr={translations.projects.subtitle.fr}
+              ar={translations.projects.subtitle.ar}
+              en={translations.projects.subtitle.en}
+            />
           </p>
         </div>
       </section>
@@ -60,8 +64,8 @@ const Projects = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            title="Domaines d'Application"
-            subtitle="Des solutions adaptées à chaque besoin"
+            title={<TransText fr={translations.projects.useCasesTitle.fr} ar={translations.projects.useCasesTitle.ar} en={translations.projects.useCasesTitle.en} />}
+            subtitle={<TransText fr={translations.projects.useCasesSubtitle.fr} ar={translations.projects.useCasesSubtitle.ar} en={translations.projects.useCasesSubtitle.en} />}
           />
           <div className="grid md:grid-cols-2 gap-8">
             {useCases.map((useCase, index) => (
@@ -72,7 +76,7 @@ const Projects = () => {
                 <div className="h-64 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 relative">
                   <img
                     src={useCase.image}
-                    alt={useCase.title}
+                    alt={translations.projects[useCase.key].title.fr}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
@@ -80,10 +84,18 @@ const Projects = () => {
                 </div>
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-industrial-dark mb-4 group-hover:text-industrial-blue transition-colors">
-                    {useCase.title}
+                    <TransText
+                      fr={translations.projects[useCase.key].title.fr}
+                      ar={translations.projects[useCase.key].title.ar}
+                      en={translations.projects[useCase.key].title.en}
+                    />
                   </h3>
                   <p className="text-gray-600 leading-relaxed text-lg">
-                    {useCase.description}
+                    <TransText
+                      fr={translations.projects[useCase.key].desc.fr}
+                      ar={translations.projects[useCase.key].desc.ar}
+                      en={translations.projects[useCase.key].desc.en}
+                    />
                   </p>
                 </div>
               </div>
@@ -96,8 +108,8 @@ const Projects = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            title="Galerie de Projets"
-            subtitle="Découvrez nos réalisations"
+            title={<TransText fr={translations.projects.galleryTitle.fr} ar={translations.projects.galleryTitle.ar} en={translations.projects.galleryTitle.en} />}
+            subtitle={<TransText fr={translations.projects.gallerySubtitle.fr} ar={translations.projects.gallerySubtitle.ar} en={translations.projects.gallerySubtitle.en} />}
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map((image, index) => (

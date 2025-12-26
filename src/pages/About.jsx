@@ -1,26 +1,24 @@
 import SectionTitle from '../components/SectionTitle'
+import { TransText } from '../components/TransText'
+import { translations } from '../data/translations'
 
 const About = () => {
   const values = [
     {
       icon: '✓',
-      title: 'Qualité',
-      description: 'Produits certifiés selon les normes internationales',
+      key: 'quality',
     },
     {
       icon: '✓',
-      title: 'Fiabilité',
-      description: '25 ans d\'expérience au service de nos clients',
+      key: 'reliability',
     },
     {
       icon: '✓',
-      title: 'Innovation',
-      description: 'Solutions modernes pour infrastructures durables',
+      key: 'innovation',
     },
     {
       icon: '✓',
-      title: 'Service',
-      description: 'Accompagnement personnalisé de A à Z',
+      key: 'service',
     },
   ]
 
@@ -33,9 +31,19 @@ const About = () => {
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-white rounded-full blur-3xl"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">À Propos de SONOTIC</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+            <TransText
+              fr={translations.about.title.fr}
+              ar={translations.about.title.ar}
+              en={translations.about.title.en}
+            />
+          </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Votre partenaire de confiance pour l'infrastructure industrielle au Maroc
+            <TransText
+              fr={translations.about.subtitle.fr}
+              ar={translations.about.subtitle.ar}
+              en={translations.about.subtitle.en}
+            />
           </p>
         </div>
       </section>
@@ -44,28 +52,31 @@ const About = () => {
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            title="Notre Histoire"
-            subtitle="Un parcours de croissance et d'excellence"
+            title={<TransText fr={translations.about.historyTitle.fr} ar={translations.about.historyTitle.ar} en={translations.about.historyTitle.en} />}
+            subtitle={<TransText fr={translations.about.historySubtitle.fr} ar={translations.about.historySubtitle.ar} en={translations.about.historySubtitle.en} />}
           />
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg mx-auto">
               <p className="text-gray-700 leading-relaxed mb-6 text-lg">
-                Fondée il y a plus de 25 ans, SONOTIC s'est imposée comme un
-                leader dans le secteur des tuyaux industriels au Maroc. Notre
-                entreprise a été créée avec une vision claire : fournir des
-                solutions durables et performantes pour répondre aux besoins
-                croissants en infrastructure du pays.
+                <TransText
+                  fr={translations.about.history1.fr}
+                  ar={translations.about.history1.ar}
+                  en={translations.about.history1.en}
+                />
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Au fil des années, nous avons élargi notre gamme de produits et
-                renforcé notre expertise technique. Aujourd'hui, SONOTIC
-                accompagne les projets les plus ambitieux, de l'approvisionnement
-                en eau potable aux infrastructures industrielles complexes.
+                <TransText
+                  fr={translations.about.history2.fr}
+                  ar={translations.about.history2.ar}
+                  en={translations.about.history2.en}
+                />
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Notre engagement envers la qualité et l'innovation nous a permis
-                d'obtenir la certification ISO 9001 et de devenir le partenaire
-                privilégié de nombreuses entreprises et institutions au Maroc.
+                <TransText
+                  fr={translations.about.history3.fr}
+                  ar={translations.about.history3.ar}
+                  en={translations.about.history3.en}
+                />
               </p>
             </div>
           </div>
@@ -81,14 +92,18 @@ const About = () => {
                 <span className="text-3xl text-white">🎯</span>
               </div>
               <h3 className="text-2xl font-bold text-industrial-blue mb-4">
-                Notre Mission
+                <TransText
+                  fr={translations.about.missionTitle.fr}
+                  ar={translations.about.missionTitle.ar}
+                  en={translations.about.missionTitle.en}
+                />
               </h3>
               <p className="text-gray-700 leading-relaxed text-lg">
-                Fournir des solutions de tuyaux industriels de la plus haute
-                qualité, en répondant aux besoins spécifiques de nos clients
-                marocains. Nous nous engageons à offrir des produits durables,
-                performants et conformes aux normes internationales, tout en
-                maintenant un service client exceptionnel.
+                <TransText
+                  fr={translations.about.mission.fr}
+                  ar={translations.about.mission.ar}
+                  en={translations.about.mission.en}
+                />
               </p>
             </div>
             <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
@@ -96,14 +111,18 @@ const About = () => {
                 <span className="text-3xl text-white">👁️</span>
               </div>
               <h3 className="text-2xl font-bold text-industrial-blue mb-4">
-                Notre Vision
+                <TransText
+                  fr={translations.about.visionTitle.fr}
+                  ar={translations.about.visionTitle.ar}
+                  en={translations.about.visionTitle.en}
+                />
               </h3>
               <p className="text-gray-700 leading-relaxed text-lg">
-                Être le leader incontesté du marché marocain des tuyaux
-                industriels, reconnu pour notre excellence, notre innovation et
-                notre contribution au développement des infrastructures du pays.
-                Nous aspirons à étendre notre présence et à continuer à servir
-                de référence dans le secteur.
+                <TransText
+                  fr={translations.about.vision.fr}
+                  ar={translations.about.vision.ar}
+                  en={translations.about.vision.en}
+                />
               </p>
             </div>
           </div>
@@ -114,8 +133,8 @@ const About = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            title="Pourquoi Choisir SONOTIC"
-            subtitle="Des avantages qui font la différence"
+            title={<TransText fr={translations.about.valuesTitle.fr} ar={translations.about.valuesTitle.ar} en={translations.about.valuesTitle.en} />}
+            subtitle={<TransText fr={translations.about.valuesSubtitle.fr} ar={translations.about.valuesSubtitle.ar} en={translations.about.valuesSubtitle.en} />}
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
@@ -127,9 +146,19 @@ const About = () => {
                   {value.icon}
                 </div>
                 <h4 className="text-xl font-bold text-industrial-dark mb-3">
-                  {value.title}
+                  <TransText
+                    fr={translations.about.values[value.key].title.fr}
+                    ar={translations.about.values[value.key].title.ar}
+                    en={translations.about.values[value.key].title.en}
+                  />
                 </h4>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <p className="text-gray-600 leading-relaxed">
+                  <TransText
+                    fr={translations.about.values[value.key].desc.fr}
+                    ar={translations.about.values[value.key].desc.ar}
+                    en={translations.about.values[value.key].desc.en}
+                  />
+                </p>
               </div>
             ))}
           </div>
@@ -145,14 +174,18 @@ const About = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-8">
-              Expertise Locale, Standards Internationaux
+              <TransText
+                fr={translations.about.expertiseTitle.fr}
+                ar={translations.about.expertiseTitle.ar}
+                en={translations.about.expertiseTitle.en}
+              />
             </h2>
             <p className="text-xl text-gray-200 leading-relaxed">
-              En tant qu'entreprise marocaine, nous comprenons parfaitement les
-              défis et les besoins spécifiques du marché local. Notre connaissance
-              approfondie du terrain, combinée à notre respect des normes
-              internationales, nous permet d'offrir des solutions adaptées et
-              performantes pour tous vos projets d'infrastructure au Maroc.
+              <TransText
+                fr={translations.about.expertise.fr}
+                ar={translations.about.expertise.ar}
+                en={translations.about.expertise.en}
+              />
             </p>
           </div>
         </div>

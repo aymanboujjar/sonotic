@@ -1,18 +1,29 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useLanguage } from '../contexts/LanguageContext'
+import { TransText } from './TransText'
+import { translations } from '../data/translations'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [langMenuOpen, setLangMenuOpen] = useState(false)
   const location = useLocation()
+  const { selectedLanguage, changeLanguage } = useLanguage()
 
   const isActive = (path) => location.pathname === path
 
   const navLinks = [
-    { path: '/', label: 'Accueil' },
-    { path: '/products', label: 'Produits' },
-    { path: '/about', label: 'À Propos' },
-    { path: '/projects', label: 'Projets' },
-    { path: '/contact', label: 'Contact' },
+    { path: '/', key: 'home' },
+    { path: '/products', key: 'products' },
+    { path: '/about', key: 'about' },
+    { path: '/projects', key: 'projects' },
+    { path: '/contact', key: 'contact' },
+  ]
+
+  const languages = [
+    { code: 'fr', name: 'FR', },
+    { code: 'ar', name: 'AR',  },
+    { code: 'en', name: 'EN', },
   ]
 
   return (
@@ -51,7 +62,11 @@ const Navbar = () => {
                     : 'text-gray-700 hover:text-industrial-blue hover:bg-gray-50'
                 }`}
               >
-                {link.label}
+                <TransText
+                  fr={translations.nav[link.key].fr}
+                  ar={translations.nav[link.key].ar}
+                  en={translations.nav[link.key].en}
+                />
                 {/* Active underline */}
                 {isActive(link.path) && (
                   <span className="absolute bottom-0.5 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-industrial-blue to-industrial-dark rounded-full"></span>
@@ -74,8 +89,65 @@ const Navbar = () => {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              Contact
+              <TransText
+                fr={translations.nav.contact.fr}
+                ar={translations.nav.contact.ar}
+                en={translations.nav.contact.en}
+              />
             </Link>
+            {/* Language Selector */}
+            <div className="relative ml-2">
+              <button
+                onClick={() => setLangMenuOpen(!langMenuOpen)}
+                className={`px-4 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 flex items-center gap-2 border-2 ${
+                  langMenuOpen
+                    ? 'bg-industrial-blue text-white border-industrial-blue shadow-lg'
+                    : 'bg-white text-industrial-blue border-industrial-blue/30 hover:bg-industrial-blue/5 hover:border-industrial-blue/50'
+                }`}
+                aria-label="Select language"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                </svg>
+                <span className="font-semibold">
+                  {languages.find(l => l.code === selectedLanguage)?.name}
+                </span>
+                <svg className={`w-4 h-4 transition-transform duration-300 ${langMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {langMenuOpen && (
+                <>
+                  <div
+                    className="fixed inset-0 z-40"
+                    onClick={() => setLangMenuOpen(false)}
+                  ></div>
+                  <div className="absolute right-0 mt-2 w-36 bg-white rounded-xl shadow-2xl border-2 border-industrial-blue/20 py-2 z-50 overflow-hidden animate-slide-down">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          changeLanguage(lang.code)
+                          setLangMenuOpen(false)
+                        }}
+                        className={`w-full px-4 py-3 text-left text-sm font-semibold transition-all duration-200 flex items-center justify-between gap-3 ${
+                          selectedLanguage === lang.code
+                            ? 'bg-gradient-to-r from-industrial-blue/10 to-industrial-dark/10 text-industrial-blue border-l-4 border-industrial-blue'
+                            : 'text-gray-700 hover:bg-gray-50 hover:text-industrial-blue'
+                        }`}
+                      >
+                        <span className="font-bold tracking-wide">{lang.name}</span>
+                        {selectedLanguage === lang.code && (
+                          <svg className="w-5 h-5 text-industrial-blue flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -119,9 +191,42 @@ const Navbar = () => {
                     : 'text-gray-700 hover:text-industrial-blue hover:bg-gray-100 hover:translate-x-2'
                 }`}
               >
-                {link.label}
+                <TransText
+                  fr={translations.nav[link.key].fr}
+                  ar={translations.nav[link.key].ar}
+                  en={translations.nav[link.key].en}
+                />
               </Link>
             ))}
+            {/* Language Selector Mobile */}
+            <div className="px-5 py-3.5">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                  <svg className="w-5 h-5 text-industrial-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                  </svg>
+                  <TransText fr="Langue" ar="اللغة" en="Language" />
+                </span>
+                <div className="flex gap-2">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        changeLanguage(lang.code)
+                        setIsOpen(false)
+                      }}
+                      className={`px-4 py-2 rounded-lg text-sm font-bold transition-all border-2 ${
+                        selectedLanguage === lang.code
+                          ? 'bg-industrial-blue text-white border-industrial-blue shadow-md scale-105'
+                          : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-industrial-blue/50'
+                      }`}
+                    >
+                      {lang.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
             <Link
               to="/contact"
               onClick={() => setIsOpen(false)}
@@ -135,7 +240,11 @@ const Navbar = () => {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                Contact
+                <TransText
+                  fr={translations.nav.contact.fr}
+                  ar={translations.nav.contact.ar}
+                  en={translations.nav.contact.en}
+                />
               </span>
             </Link>
           </div>

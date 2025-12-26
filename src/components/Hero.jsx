@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { TransText } from './TransText'
+import { translations } from '../data/translations'
 
 const Hero = ({ title, subtitle, backgroundImage, showButtons = true }) => {
   return (
@@ -31,10 +33,18 @@ const Hero = ({ title, subtitle, backgroundImage, showButtons = true }) => {
         {showButtons && (
           <div className="flex flex-col sm:flex-row gap-5 justify-center animate-fade-in">
             <Link to="/products" className="btn-primary shadow-xl">
-              Nos Produits
+              <TransText
+                fr={translations.home.seeAllProducts.fr}
+                ar={translations.home.seeAllProducts.ar}
+                en={translations.home.seeAllProducts.en}
+              />
             </Link>
             <Link to="/contact" className="btn-outline bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-industrial-blue">
-              Contactez-nous
+              <TransText
+                fr={translations.nav.contact.fr}
+                ar={translations.nav.contact.ar}
+                en={translations.nav.contact.en}
+              />
             </Link>
           </div>
         )}

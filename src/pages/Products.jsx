@@ -1,17 +1,21 @@
 import { useState } from 'react'
 import SectionTitle from '../components/SectionTitle'
 import ProductCard from '../components/ProductCard'
+import { TransText } from '../components/TransText'
+import { translations } from '../data/translations'
+import { useLanguage } from '../contexts/LanguageContext'
 import productsData from '../data/products.json'
 
 const Products = () => {
-  const [selectedType, setSelectedType] = useState('Tous')
+  const { selectedLanguage } = useLanguage()
+  const [selectedType, setSelectedType] = useState(translations.products.all[selectedLanguage])
 
   // Get unique product types
-  const productTypes = ['Tous', ...new Set(productsData.map((p) => p.type))]
+  const productTypes = [translations.products.all[selectedLanguage], ...new Set(productsData.map((p) => p.type))]
 
   // Filter products
   const filteredProducts =
-    selectedType === 'Tous'
+    selectedType === translations.products.all[selectedLanguage]
       ? productsData
       : productsData.filter((p) => p.type === selectedType)
 
@@ -24,9 +28,19 @@ const Products = () => {
           <div className="absolute bottom-0 left-0 w-72 h-72 bg-white rounded-full blur-3xl"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">Nos Produits</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+            <TransText
+              fr={translations.products.title.fr}
+              ar={translations.products.title.ar}
+              en={translations.products.title.en}
+            />
+          </h1>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Solutions complètes pour tous vos besoins en tuyaux industriels
+            <TransText
+              fr={translations.products.subtitle.fr}
+              ar={translations.products.subtitle.ar}
+              en={translations.products.subtitle.en}
+            />
           </p>
         </div>
       </section>
@@ -57,7 +71,20 @@ const Products = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <p className="text-gray-600 text-center text-lg font-medium">
-              <span className="text-industrial-blue font-bold">{filteredProducts.length}</span> produit{filteredProducts.length > 1 ? 's' : ''} trouvé{filteredProducts.length > 1 ? 's' : ''}
+              <span className="text-industrial-blue font-bold">{filteredProducts.length}</span>{' '}
+              {filteredProducts.length === 1 ? (
+                <TransText
+                  fr={translations.products.found.fr}
+                  ar={translations.products.found.ar}
+                  en={translations.products.found.en}
+                />
+              ) : (
+                <TransText
+                  fr={translations.products.foundPlural.fr}
+                  ar={translations.products.foundPlural.ar}
+                  en={translations.products.foundPlural.en}
+                />
+              )}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
