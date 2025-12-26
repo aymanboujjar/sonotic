@@ -126,14 +126,14 @@ const Home = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <ScrollReveal key={index} delay={index * 100}>
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-industrial-blue to-industrial-dark rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl">
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 text-center h-full flex flex-col">
+                  <div className="w-16 h-16 bg-gradient-to-br from-industrial-blue to-industrial-dark rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl flex-shrink-0">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-industrial-dark mb-3">
+                  <h3 className="text-xl font-bold text-industrial-dark mb-3 flex-shrink-0">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed flex-grow">
                     {feature.description}
                   </p>
                 </div>

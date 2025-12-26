@@ -99,8 +99,8 @@ const Contact = () => {
 
       {/* Contact Section */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto">
             {/* Contact Form */}
             <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
               <h2 className="text-3xl font-bold text-industrial-dark mb-8">
@@ -288,32 +288,12 @@ const Contact = () => {
                         Heures d'ouverture
                       </h3>
                       <p className="text-gray-600">
-                        Lundi - Vendredi: 8h00 - 18h00
+                        Lun–Ven : 8h30–12h / 14h–18h30
                         <br />
-                        Samedi: 9h00 - 13h00
+                        Sam : 8h30–12h
                       </p>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Map */}
-              <div className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100">
-                <h2 className="text-2xl font-bold text-industrial-dark mb-6">
-                  Notre Localisation
-                </h2>
-                <div className="rounded-xl overflow-hidden shadow-lg border-2 border-gray-200">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.202849478001!2d-7.5838764!3d33.6000409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd7c4d7ba277%3A0xaa7941c611135361!2sSONOTIC!5e0!3m2!1sfr!2sma!4v1766693263517!5m2!1sfr!2sma"
-                    width="100%"
-                    height="450"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Localisation SONOTIC"
-                    className="w-full"
-                  ></iframe>
                 </div>
               </div>
             </div>

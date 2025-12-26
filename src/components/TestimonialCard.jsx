@@ -1,7 +1,7 @@
 const TestimonialCard = ({ testimonial }) => {
   return (
-    <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
-      <div className="flex items-center mb-4">
+    <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
+      <div className="flex items-center mb-4 flex-shrink-0">
         {[...Array(5)].map((_, i) => (
           <svg
             key={i}
@@ -13,10 +13,10 @@ const TestimonialCard = ({ testimonial }) => {
           </svg>
         ))}
       </div>
-      <p className="text-gray-700 mb-6 leading-relaxed italic">
+      <p className="text-gray-700 mb-6 leading-relaxed italic flex-grow">
         "{testimonial.text}"
       </p>
-      <div className="flex items-center">
+      <div className="flex items-center flex-shrink-0">
         <div className="w-12 h-12 bg-gradient-to-br from-industrial-blue to-industrial-dark rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
           {testimonial.initials}
         </div>

@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-white rounded-full blur-3xl"></div>
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
@@ -58,48 +58,22 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Map Location */}
           <div>
-            <h4 className="text-xl font-bold mb-6">Liens Rapides</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">
-                  Accueil
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">
-                  Produits
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">
-                  À Propos
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">
-                  Projets
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-xl font-bold mb-6">Services</h4>
-            <ul className="space-y-3 text-gray-300">
-              <li className="hover:text-white transition-colors cursor-default">Tuyaux PVC</li>
-              <li className="hover:text-white transition-colors cursor-default">Tuyaux HDPE</li>
-              <li className="hover:text-white transition-colors cursor-default">Tuyaux Acier</li>
-              <li className="hover:text-white transition-colors cursor-default">Tuyaux Béton</li>
-              <li className="hover:text-white transition-colors cursor-default">Consultation</li>
-            </ul>
+            <h4 className="text-xl font-bold mb-6">Notre Localisation</h4>
+            <div className="rounded-xl overflow-hidden shadow-lg border-2 border-white/20">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.202849478001!2d-7.5838764!3d33.6000409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd7c4d7ba277%3A0xaa7941c611135361!2sSONOTIC!5e0!3m2!1sfr!2sma!4v1766693263517!5m2!1sfr!2sma"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localisation SONOTIC"
+                className="w-full"
+              ></iframe>
+            </div>
           </div>
         </div>
 
