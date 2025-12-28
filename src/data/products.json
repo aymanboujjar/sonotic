@@ -1,100 +1,72 @@
 [
   {
-    "id": "pvc-1",
-    "name": "Tuyaux PVC",
-    "type": "PVC",
-    "description": "Tuyaux en PVC de haute qualité pour l'approvisionnement en eau potable, l'irrigation et les systèmes de drainage. Résistants à la corrosion et durables.",
-    "image": "/assets/tuyau-flexible-hydraulique.jpg",
-    "specs": {
-      "diametre": "20mm - 630mm",
-      "pression": "PN6 - PN16",
-      "norme": "NF EN 1452"
-    }
+    "id": "air-comprime-1",
+    "name": "Tuyau air comprimé",
+    "image": "/assets/tuyau air comprimé.jpg"
   },
   {
-    "id": "hdpe-1",
-    "name": "Tuyaux HDPE",
-    "type": "HDPE",
-    "description": "Tuyaux en polyéthylène haute densité pour applications industrielles et municipales. Excellente résistance chimique et longue durée de vie.",
-    "image": "/assets/vidaxl-tuyau-plat-20-m-3-pvc-7994386.jpg",
-    "specs": {
-      "diametre": "32mm - 1200mm",
-      "pression": "PN6 - PN25",
-      "norme": "NF EN 12201"
-    }
+    "id": "cristal-1",
+    "name": "Tuyau Cristal",
+    "image": "/assets/tuyau air cristal.jpg"
   },
   {
-    "id": "steel-1",
-    "name": "Tuyaux Acier",
-    "type": "Acier",
-    "description": "Tuyaux en acier pour applications industrielles exigeantes. Résistance élevée à la pression et à la température.",
-    "image": "/assets/castolin-tuyaux-jumeles-oxygeneacetylene-image-532655.webp",
-    "specs": {
-      "diametre": "15mm - 2000mm",
-      "pression": "Jusqu'à 100 bar",
-      "norme": "NF EN 10255"
-    }
+    "id": "cristal-alimentaire-1",
+    "name": "Tuyai Cristal alimentaire",
+    "image": "/assets/tuyau air cristal alimentaire.jpg"
   },
   {
-    "id": "concrete-1",
-    "name": "Tuyaux Béton",
-    "type": "Béton",
-    "description": "Tuyaux en béton armé pour réseaux d'assainissement et d'évacuation. Durabilité exceptionnelle et résistance structurelle.",
-    "image": "/assets/p193781.png",
-    "specs": {
-      "diametre": "200mm - 3000mm",
-      "classe": "D400 - D4000",
-      "norme": "NF EN 1916"
-    }
+    "id": "collier-inox-1",
+    "name": "Accessoire – collier de serrage inox",
+    "image": "/assets/collier de serrage inox.jpg"
   },
   {
-    "id": "pvc-2",
-    "name": "Tuyaux PVC Rigide",
-    "type": "PVC",
-    "description": "Tuyaux PVC rigides pour réseaux d'eau potable et d'irrigation. Installation facile et maintenance minimale.",
-    "image": "/assets/RC8_03_167_W_RC_15.webp",
-    "specs": {
-      "diametre": "20mm - 400mm",
-      "pression": "PN6 - PN16",
-      "norme": "NF EN 1452"
-    }
+    "id": "tuyau-metallique-1",
+    "name": "Tuyau métallique alimentation convoyeur 30 m",
+    "image": "/assets/Tuyau métallique alimentation convoyeur 30 m.jpg"
   },
   {
-    "id": "hdpe-2",
-    "name": "Tuyaux HDPE SDR",
-    "type": "HDPE",
-    "description": "Tuyaux HDPE avec ratio SDR optimisé pour différentes pressions de service. Idéal pour réseaux d'eau potable.",
-    "image": "/assets/AAAAA77946_img2.webp",
-    "specs": {
-      "diametre": "32mm - 800mm",
-      "pression": "PN6 - PN20",
-      "norme": "NF EN 12201"
-    }
+    "id": "raccord-synthetique-1",
+    "name": "Raccord synthétique",
+    "image": "/assets/Raccord synthétique.webp"
   },
   {
-    "id": "steel-2",
-    "name": "Tuyaux Acier Galvanisé",
-    "type": "Acier",
-    "description": "Tuyaux en acier galvanisé pour protection contre la corrosion. Applications en plomberie et systèmes industriels.",
-    "image": "/assets/castolin-tuyaux-jumeles-oxygeneacetylene-image-532657.webp",
-    "specs": {
-      "diametre": "15mm - 500mm",
-      "epaisseur": "Selon demande",
-      "norme": "NF EN 10255"
-    }
+    "id": "tuyau-spiral-1",
+    "name": "Tuyau spiral (gorge)",
+    "image": "/assets/Tuyau spiral (gorge).jpg"
   },
   {
-    "id": "accessories-1",
-    "name": "Raccords et Accessoires",
-    "type": "Accessoires",
-    "description": "Gamme complète de raccords, colliers et accessoires pour tous types de tuyaux. Compatibilité garantie.",
-    "image": "/assets/raccord.webp",
-    "specs": {
-      "materiau": "PVC, HDPE, Acier",
-      "types": "Raccords, Colliers, Vannes"
-    }
+    "id": "oxygene-acetylene-1",
+    "name": "Rouge et bleu – tuyau oxygène / acétylène",
+    "image": "/assets/Rouge et bleu – tuyau oxygène - acétylène - rouge.webp"
+  },
+  {
+    "id": "tapis-caoutchouc-1",
+    "name": "Tapis caoutchouc strié (largeur 180 cm, longueur 10 cm)",
+    "image": "/assets/Tapis caoutchouc strié (largeur 180 cm, longueur 10 cm).webp"
+  },
+  {
+    "id": "tuyau-arrosage-1",
+    "name": "Tuyau d'arrosage longueur 50 m",
+    "image": "/assets/Tuyau d'arrosage longueur 50 m.webp"
+  },
+  {
+    "id": "tuyau-janica-1",
+    "name": "Tuyau Jamaica",
+    "image": "/assets/Tuyau Jamaica"
+  },
+  {
+    "id": "pvc-alimentaire-1",
+    "name": "Tuyau PVC alimentaire longueur 10 m",
+    "image": "/assets/Tuyau PVC alimentaire longueur 10 m.jpg"
+  },
+  {
+    "id": "tuyau-radiateur-1",
+    "name": "Tuyau radiateur en caoutchouc",
+    "image": "/assets/Tuyau radiateur en caoutchouc.png"
+  },
+  {
+    "id": "spiral-1",
+    "name": "Spiral",
+    "image": "/assets/Spiral.jpg"
   }
 ]
-
-
-

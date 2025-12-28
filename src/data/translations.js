@@ -48,9 +48,9 @@ export const translations = {
       en: 'Discover our complete range of high-quality industrial pipes',
     },
     seeAllProducts: {
-      fr: 'Voir tous les produits',
-      ar: 'عرض جميع المنتجات',
-      en: 'See all products',
+      fr: 'Voir  les produits',
+      ar: 'عرض  المنتجات',
+      en: 'See  products',
     },
     whyChooseTitle: {
       fr: 'Pourquoi Choisir SONOTIC',
@@ -110,9 +110,14 @@ export const translations = {
   products: {
     title: { fr: 'Nos Produits', ar: 'منتجاتنا', en: 'Our Products' },
     subtitle: {
-      fr: 'Solutions complètes pour tous vos besoins en tuyaux industriels',
-      ar: 'حلول شاملة لجميع احتياجاتك من الأنابيب الصناعية',
-      en: 'Complete solutions for all your industrial pipe needs',
+      fr: 'Voici quelques-uns de nos produits - Solutions complètes pour tous vos besoins en tuyaux industriels',
+      ar: 'إليك بعض منتجاتنا - حلول شاملة لجميع احتياجاتك من الأنابيب الصناعية',
+      en: 'Here are some of our products - Complete solutions for all your industrial pipe needs',
+    },
+    importedFromItaly: {
+      fr: 'Produits importés d\'Italie',
+      ar: 'منتجات مستوردة من إيطاليا',
+      en: 'Products imported from Italy',
     },
     all: { fr: 'Tous', ar: 'الكل', en: 'All' },
     found: {
@@ -129,6 +134,21 @@ export const translations = {
       fr: 'Voir détails',
       ar: 'عرض التفاصيل',
       en: 'See details',
+    },
+    moreProductsTitle: {
+      fr: 'Besoin de plus de produits ?',
+      ar: 'تحتاج المزيد من المنتجات؟',
+      en: 'Need more products?',
+    },
+    moreProductsSubtitle: {
+      fr: 'Nous proposons une large gamme de tuyaux industriels et alimentaires. Contactez-nous pour découvrir tous nos produits disponibles.',
+      ar: 'نقدم مجموعة واسعة من الأنابيب الصناعية والغذائية. اتصل بنا لاكتشاف جميع منتجاتنا المتاحة.',
+      en: 'We offer a wide range of industrial and food pipes. Contact us to discover all our available products.',
+    },
+    contactUs: {
+      fr: 'Contactez-nous',
+      ar: 'اتصل بنا',
+      en: 'Contact Us',
     },
   },
   about: {
@@ -153,19 +173,19 @@ export const translations = {
       en: 'A journey of growth and excellence',
     },
     history1: {
-      fr: "Fondée il y a plus de 25 ans, SONOTIC s'est imposée comme un leader dans le secteur des tuyaux industriels au Maroc. Notre entreprise a été créée avec une vision claire : fournir des solutions durables et performantes pour répondre aux besoins croissants en infrastructure du pays.",
-      ar: 'تأسست منذ أكثر من 25 عاماً، أصبحت SONOTIC رائدة في قطاع الأنابيب الصناعية في المغرب. تم إنشاء شركتنا برؤية واضحة: تقديم حلول مستدامة وفعالة لتلبية الاحتياجات المتزايدة للبنية التحتية في البلاد.',
-      en: 'Founded over 25 years ago, SONOTIC has established itself as a leader in the industrial pipe sector in Morocco. Our company was created with a clear vision: to provide sustainable and efficient solutions to meet the country\'s growing infrastructure needs.',
+      fr: "Créée en 2016 sur la base de plus de 25 ans d'expertise, la société SONOTIC s'impose aujourd'hui comme un acteur de référence dans l'importation et la distribution de tuyaux industriels et alimentaires, ainsi que de tapis en caoutchouc, au service des secteurs les plus exigeants au Maroc.",
+      ar: 'تأسست في عام 2016 على أساس أكثر من 25 عاماً من الخبرة، تفرض شركة SONOTIC نفسها اليوم كفاعل مرجعي في استيراد وتوزيع الأنابيب الصناعية والغذائية، وكذلك أغطية المطاط، في خدمة القطاعات الأكثر تطلباً في المغرب.',
+      en: 'Founded in 2016 based on more than 25 years of expertise, SONOTIC has established itself today as a reference player in the import and distribution of industrial and food pipes, as well as rubber mats, serving the most demanding sectors in Morocco.',
     },
     history2: {
-      fr: "Au fil des années, nous avons élargi notre gamme de produits et renforcé notre expertise technique. Aujourd'hui, SONOTIC accompagne les projets les plus ambitieux, de l'approvisionnement en eau potable aux infrastructures industrielles complexes.",
-      ar: 'على مر السنين، وسعنا مجموعة منتجاتنا وعززنا خبرتنا التقنية. اليوم، ترافق SONOTIC المشاريع الأكثر طموحاً، من توفير مياه الشرب إلى البنية التحتية الصناعية المعقدة.',
-      en: 'Over the years, we have expanded our product range and strengthened our technical expertise. Today, SONOTIC accompanies the most ambitious projects, from drinking water supply to complex industrial infrastructure.',
+      fr: "Adossée à un savoir-faire solide et à une parfaite maîtrise des applications industrielles et agroalimentaires, Sonotic propose des solutions fiables, durables et conformes aux normes de qualité et de sécurité les plus strictes.",
+      ar: 'مدعومة بخبرة قوية وإتقان كامل للتطبيقات الصناعية والزراعية الغذائية، تقدم Sonotic حلولاً موثوقة ودائمة ومتوافقة مع أشد معايير الجودة والسلامة صرامة.',
+      en: 'Backed by solid expertise and perfect mastery of industrial and agri-food applications, Sonotic offers reliable, durable solutions that comply with the strictest quality and safety standards.',
     },
     history3: {
-      fr: "Notre engagement envers la qualité et l'innovation nous a permis d'obtenir la certification ISO 9001 et de devenir le partenaire privilégié de nombreuses entreprises et institutions au Maroc.",
-      ar: 'سمح لنا التزامنا بالجودة والابتكار بالحصول على شهادة ISO 9001 وأن نصبح الشريك المفضل للعديد من الشركات والمؤسسات في المغرب.',
-      en: 'Our commitment to quality and innovation has enabled us to obtain ISO 9001 certification and become the preferred partner of many companies and institutions in Morocco.',
+      fr: "La satisfaction de nos clients, construite à travers des partenariats solides et une relation de confiance, constitue le cœur de notre engagement. Nous œuvrons en permanence pour dépasser les attentes, optimiser les coûts et garantir un rapport qualité/prix optimal. Portée par des équipes qualifiées, intègres et engagées, disposant d'une connaissance approfondie du marché et des produits, Sonotic affirme sa volonté d'excellence et de croissance continue, et se positionne comme un partenaire stratégique pour le développement des industries marocaines.",
+      ar: 'رضا عملائنا، المبني على شراكات قوية وعلاقة ثقة، يشكل جوهر التزامنا. نعمل باستمرار لتجاوز التوقعات وتحسين التكاليف وضمان أفضل نسبة جودة/سعر. مدعومة بفرق مؤهلة ونزيهة وملتزمة، تتمتع بمعرفة عميقة بالسوق والمنتجات، تؤكد Sonotic إرادتها في التميز والنمو المستمر، وتضع نفسها كشريك استراتيجي لتطوير الصناعات المغربية.',
+      en: 'Our clients\' satisfaction, built through strong partnerships and a relationship of trust, is at the heart of our commitment. We constantly work to exceed expectations, optimize costs, and guarantee an optimal quality/price ratio. Driven by qualified, honest, and committed teams with in-depth knowledge of the market and products, Sonotic affirms its commitment to excellence and continuous growth, positioning itself as a strategic partner for the development of Moroccan industries.',
     },
     missionTitle: {
       fr: 'Notre Mission',
@@ -173,9 +193,9 @@ export const translations = {
       en: 'Our Mission',
     },
     mission: {
-      fr: "Fournir des solutions de tuyaux industriels de la plus haute qualité, en répondant aux besoins spécifiques de nos clients marocains. Nous nous engageons à offrir des produits durables, performants et conformes aux normes internationales, tout en maintenant un service client exceptionnel.",
-      ar: 'تقديم حلول الأنابيب الصناعية بأعلى جودة، مع تلبية الاحتياجات الخاصة لعملائنا المغاربة. نلتزم بتقديم منتجات مستدامة وفعالة ومتوافقة مع المعايير الدولية، مع الحفاظ على خدمة عملاء استثنائية.',
-      en: 'To provide industrial pipe solutions of the highest quality, meeting the specific needs of our Moroccan clients. We are committed to offering durable, efficient, and internationally compliant products while maintaining exceptional customer service.',
+      fr: "Proposer des solutions fiables, durables et conformes aux normes de qualité et de sécurité les plus strictes pour l'importation et la distribution de tuyaux industriels et alimentaires, ainsi que de tapis en caoutchouc. Nous œuvrons en permanence pour dépasser les attentes de nos clients, optimiser les coûts et garantir un rapport qualité/prix optimal.",
+      ar: 'تقديم حلول موثوقة ودائمة ومتوافقة مع أشد معايير الجودة والسلامة صرامة لاستيراد وتوزيع الأنابيب الصناعية والغذائية، وكذلك أغطية المطاط. نعمل باستمرار لتجاوز توقعات عملائنا وتحسين التكاليف وضمان أفضل نسبة جودة/سعر.',
+      en: 'To offer reliable, durable solutions that comply with the strictest quality and safety standards for the import and distribution of industrial and food pipes, as well as rubber mats. We constantly work to exceed our clients\' expectations, optimize costs, and guarantee an optimal quality/price ratio.',
     },
     visionTitle: {
       fr: 'Notre Vision',
@@ -183,9 +203,9 @@ export const translations = {
       en: 'Our Vision',
     },
     vision: {
-      fr: "Être le leader incontesté du marché marocain des tuyaux industriels, reconnu pour notre excellence, notre innovation et notre contribution au développement des infrastructures du pays. Nous aspirons à étendre notre présence et à continuer à servir de référence dans le secteur.",
-      ar: 'أن نكون الرائدين بلا منازع في السوق المغربي للأنابيب الصناعية، معترفاً بنا لتميزنا وابتكارنا ومساهمتنا في تطوير البنية التحتية للبلاد. نطمح إلى توسيع وجودنا والاستمرار في أن نكون مرجعاً في القطاع.',
-      en: 'To be the undisputed leader in the Moroccan industrial pipe market, recognized for our excellence, innovation, and contribution to the country\'s infrastructure development. We aspire to expand our presence and continue to serve as a reference in the sector.',
+      fr: "Se positionner comme un partenaire stratégique pour le développement des industries marocaines, en affirmant notre volonté d'excellence et de croissance continue. Portée par des équipes qualifiées, intègres et engagées, disposant d'une connaissance approfondie du marché et des produits, Sonotic aspire à devenir l'acteur de référence incontournable dans l'importation et la distribution de tuyaux industriels et alimentaires au Maroc.",
+      ar: 'وضع أنفسنا كشريك استراتيجي لتطوير الصناعات المغربية، مع التأكيد على إرادتنا في التميز والنمو المستمر. مدعومة بفرق مؤهلة ونزيهة وملتزمة، تتمتع بمعرفة عميقة بالسوق والمنتجات، تطمح Sonotic إلى أن تصبح الفاعل المرجعي الذي لا غنى عنه في استيراد وتوزيع الأنابيب الصناعية والغذائية في المغرب.',
+      en: 'To position ourselves as a strategic partner for the development of Moroccan industries, affirming our commitment to excellence and continuous growth. Driven by qualified, honest, and committed teams with in-depth knowledge of the market and products, Sonotic aspires to become the essential reference player in the import and distribution of industrial and food pipes in Morocco.',
     },
     valuesTitle: {
       fr: 'Pourquoi Choisir SONOTIC',
@@ -449,4 +469,5 @@ export const translations = {
     },
   },
 }
+
 

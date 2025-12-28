@@ -16,7 +16,6 @@ const Navbar = () => {
     { path: '/', key: 'home' },
     { path: '/products', key: 'products' },
     { path: '/about', key: 'about' },
-    { path: '/projects', key: 'projects' },
     { path: '/contact', key: 'contact' },
   ]
 
@@ -40,8 +39,8 @@ const Navbar = () => {
               />
               <div className="absolute inset-0 bg-industrial-blue/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
-            <div className="hidden sm:block">
-              <div className="text-2xl font-extrabold bg-gradient-to-r from-industrial-blue to-industrial-dark bg-clip-text text-transparent leading-tight">
+            <div>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-industrial-blue to-industrial-dark bg-clip-text text-transparent leading-tight">
                 SONOTIC
               </div>
               <div className="text-xs font-bold text-gray-600 uppercase tracking-widest">
@@ -52,7 +51,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2">
-            {navLinks.slice(0, -1).map((link) => (
+            {navLinks.filter(link => link.path !== '/contact').map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -180,7 +179,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden animate-slide-down">
           <div className="px-4 pt-4 pb-4 space-y-2 bg-gradient-to-b from-white to-gray-50 border-t-2 border-industrial-blue/20 shadow-lg">
-            {navLinks.slice(0, -1).map((link) => (
+            {navLinks.filter(link => link.path !== '/contact').map((link) => (
               <Link
                 key={link.path}
                 to={link.path}

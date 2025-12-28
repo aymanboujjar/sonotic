@@ -2,60 +2,14 @@ import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import SectionTitle from '../components/SectionTitle'
 import ProductCard from '../components/ProductCard'
-import TestimonialCard from '../components/TestimonialCard'
 import ScrollReveal from '../components/ScrollReveal'
 import { TransText } from '../components/TransText'
 import { translations } from '../data/translations'
 import productsData from '../data/products.json'
 
 const Home = () => {
-  // Get first 4 products for preview
-  const featuredProducts = productsData.slice(0, 4)
-
-  const testimonials = [
-    {
-      text: {
-        fr: "SONOTIC a fourni des tuyaux de qualité exceptionnelle pour notre projet d'infrastructure. Leur expertise et leur service client sont remarquables.",
-        ar: 'قدمت SONOTIC أنابيب عالية الجودة لمشروع البنية التحتية الخاص بنا. خبرتهم وخدمة العملاء استثنائية.',
-        en: "SONOTIC provided exceptional quality pipes for our infrastructure project. Their expertise and customer service are remarkable.",
-      },
-      name: 'Ahmed Benali',
-      role: {
-        fr: 'Directeur de Projet',
-        ar: 'مدير المشروع',
-        en: 'Project Director',
-      },
-      initials: 'AB',
-    },
-    {
-      text: {
-        fr: "Nous travaillons avec SONOTIC depuis 10 ans. Leur fiabilité et la qualité de leurs produits en font notre partenaire de confiance.",
-        ar: 'نعمل مع SONOTIC منذ 10 سنوات. موثوقيتهم وجودة منتجاتهم تجعلهم شريكنا الموثوق.',
-        en: "We have been working with SONOTIC for 10 years. Their reliability and product quality make them our trusted partner.",
-      },
-      name: 'Fatima Alami',
-      role: {
-        fr: 'Ingénieur en Chef',
-        ar: 'المهندس الرئيسي',
-        en: 'Chief Engineer',
-      },
-      initials: 'FA',
-    },
-    {
-      text: {
-        fr: "Excellent service et produits conformes aux normes. SONOTIC comprend nos besoins et propose toujours les meilleures solutions.",
-        ar: 'خدمة ممتازة ومنتجات متوافقة مع المعايير. SONOTIC تفهم احتياجاتنا وتقدم دائماً أفضل الحلول.',
-        en: "Excellent service and standards-compliant products. SONOTIC understands our needs and always proposes the best solutions.",
-      },
-      name: 'Mohammed Tazi',
-      role: {
-        fr: 'Responsable Infrastructure',
-        ar: 'مسؤول البنية التحتية',
-        en: 'Infrastructure Manager',
-      },
-      initials: 'MT',
-    },
-  ]
+  // Get first 8 products for preview
+  const featuredProducts = productsData.slice(0, 8)
 
   const features = [
     {
@@ -128,6 +82,18 @@ const Home = () => {
       {/* Product Categories Preview */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-6">
+            <span className="inline-flex items-center gap-2 bg-gradient-to-r from-industrial-blue/10 to-industrial-dark/10 text-industrial-blue px-4 py-2 rounded-full text-sm font-semibold border border-industrial-blue/20">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <TransText
+                fr={translations.products.importedFromItaly.fr}
+                ar={translations.products.importedFromItaly.ar}
+                en={translations.products.importedFromItaly.en}
+              />
+            </span>
+          </div>
           <SectionTitle
             title={<TransText fr={translations.home.productsTitle.fr} ar={translations.home.productsTitle.ar} en={translations.home.productsTitle.en} />}
             subtitle={<TransText fr={translations.home.productsSubtitle.fr} ar={translations.home.productsSubtitle.ar} en={translations.home.productsSubtitle.en} />}
@@ -187,22 +153,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            title={<TransText fr={translations.home.testimonialsTitle.fr} ar={translations.home.testimonialsTitle.ar} en={translations.home.testimonialsTitle.en} />}
-            subtitle={<TransText fr={translations.home.testimonialsSubtitle.fr} ar={translations.home.testimonialsSubtitle.ar} en={translations.home.testimonialsSubtitle.en} />}
-          />
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <ScrollReveal key={index} delay={index * 150}>
-                <TestimonialCard testimonial={testimonial} />
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

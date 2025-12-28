@@ -4,7 +4,6 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import BackToTop from './components/BackToTop'
-import WhatsAppButton from './components/WhatsAppButton'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import About from './pages/About'
@@ -29,7 +28,6 @@ function App() {
           </main>
           <Footer />
           <BackToTop />
-          <WhatsAppButton />
         </div>
       </Router>
     </LanguageProvider>
