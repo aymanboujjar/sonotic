@@ -8,14 +8,14 @@ export const translations = {
   },
   home: {
     heroTitle: {
-      fr: 'Solutions Industrielles de Confiance',
-      ar: 'حلول صناعية موثوقة',
-      en: 'Trusted Industrial Solutions',
+      fr: 'Sonotic, qualité, fiabilité, durabilité',
+      ar: 'سونوتيك, الجودة, الموثوقية, المستدامة',
+      en: 'Sonotic, quality, reliability, durability',
     },
     heroSubtitle: {
-      fr: "Spécialiste marocain des tuyaux industriels pour l'infrastructure moderne",
-      ar: 'متخصص مغربي في الأنابيب الصناعية للبنية التحتية الحديثة',
-      en: 'Moroccan specialist in industrial pipes for modern infrastructure',
+      fr: "Spécialiste marocain des tuyaux industriels et alimentaires pour l'infrastructure moderne",
+      ar: 'متخصص مغربي في الأنابيب الصناعية والغذائية للبنية التحتية الحديثة',
+      en: 'Moroccan specialist in industrial and food pipes for modern infrastructure',
     },
     welcomeTitle: {
       fr: 'Bienvenue chez SONOTIC',
@@ -26,9 +26,9 @@ export const translations = {
       fr: 'Leader au Maroc depuis 25 ans',
       ar: 'رائد في المغرب منذ 25 عاماً',
       en: 'Leader in Morocco for 25 years',
-    },
+    },  
     intro1: {
-      fr: "Depuis plus de 25 ans, SONOTIC est le partenaire de confiance pour tous vos besoins en tuyaux industriels au Maroc. Nous fournissons des solutions durables et performantes pour l'approvisionnement en eau, l'assainissement, l'irrigation et les infrastructures industrielles.",
+      fr: "Depuis plus de 25 ans, SONOTIC est le partenaire de confiance pour tous vos besoins en tuyaux industriels et alimentaires au Maroc. Nous fournissons des solutions durables et performantes pour l'approvisionnement en eau, l'assainissement, l'irrigation et les infrastructures industrielles.",
       ar: 'منذ أكثر من 25 عاماً، SONOTIC هو الشريك الموثوق لجميع احتياجاتك من الأنابيب الصناعية في المغرب. نقدم حلولاً مستدامة وفعالة لتوفير المياه والصرف الصحي والري والبنية التحتية الصناعية.',
       en: 'For over 25 years, SONOTIC has been the trusted partner for all your industrial pipe needs in Morocco. We provide durable and efficient solutions for water supply, sanitation, irrigation, and industrial infrastructure.',
     },
@@ -43,9 +43,9 @@ export const translations = {
       en: 'Our Products',
     },
     productsSubtitle: {
-      fr: 'Découvrez notre gamme complète de tuyaux industriels de qualité supérieure',
-      ar: 'اكتشف مجموعتنا الكاملة من الأنابيب الصناعية عالية الجودة',
-      en: 'Discover our complete range of high-quality industrial pipes',
+      fr: 'Découvrez notre gamme complète de tuyaux industriels et alimentaires de qualité supérieure',
+      ar: 'اكتشف مجموعتنا الكاملة من الأنابيب الصناعية والغذائية عالية الجودة',
+      en: 'Discover our complete range of high-quality industrial and food pipes',
     },
     seeAllProducts: {
       fr: 'Voir  les produits',
@@ -110,9 +110,9 @@ export const translations = {
   products: {
     title: { fr: 'Nos Produits', ar: 'منتجاتنا', en: 'Our Products' },
     subtitle: {
-      fr: 'Voici quelques-uns de nos produits - Solutions complètes pour tous vos besoins en tuyaux industriels',
-      ar: 'إليك بعض منتجاتنا - حلول شاملة لجميع احتياجاتك من الأنابيب الصناعية',
-      en: 'Here are some of our products - Complete solutions for all your industrial pipe needs',
+      fr: 'Voici quelques-uns de nos produits - Solutions complètes pour tous vos besoins en tuyaux industriels et alimentaires',
+      ar: 'إليك بعض منتجاتنا - حلول شاملة لجميع احتياجاتك من الأنابيب الصناعية والغذائية',
+      en: 'Here are some of our products - Complete solutions for all your industrial and food pipe needs',
     },
     importedFromItaly: {
       fr: 'Produits importés d\'Italie',
@@ -435,9 +435,9 @@ export const translations = {
   },
   footer: {
     description: {
-      fr: 'Spécialiste marocain des tuyaux industriels. Solutions fiables pour l\'infrastructure moderne.',
-      ar: 'متخصص مغربي في الأنابيب الصناعية. حلول موثوقة للبنية التحتية الحديثة.',
-      en: 'Moroccan specialist in industrial pipes. Reliable solutions for modern infrastructure.',
+      fr: 'Spécialiste marocain des tuyaux industriels et alimentaires. Solutions fiables pour l\'infrastructure moderne.',
+      ar: 'متخصص مغربي في الأنابيب الصناعية والغذائية. حلول موثوقة للبنية التحتية الحديثة.',
+      en: 'Moroccan specialist in industrial and food pipes. Reliable solutions for modern infrastructure.',
     },
     quickLinks: {
       fr: 'Liens Rapides',
