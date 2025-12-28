@@ -11,7 +11,7 @@
   },
   {
     "id": "cristal-alimentaire-1",
-    "name": "Tuyau Cristal Tecs",
+    "name": "Tuyau Cristaltex",
     "image": "/assets/tuyau air cristal alimentaire.jpg"
   },
   {
@@ -21,17 +21,17 @@
   },
   {
     "id": "tuyau-metallique-1",
-    "name": "Tuyau Métalflex 30 m",
+    "name": "Tuyau Métalflex",
     "image": "/assets/Tuyau métallique alimentation convoyeur 30 m.jpg"
   },
   {
     "id": "raccord-synthetique-1",
-    "name": "Raccord synthétique",
+    "name": "raccord symétrique",
     "image": "/assets/Raccord synthétique.webp"
   },
   {
     "id": "tuyau-spiral-1",
-    "name": "Tuyau spiral (gorge)",
+    "name": "Tuyau spiral",
     "image": "/assets/Tuyau spiral (gorge).jpg"
   },
   {
@@ -41,12 +41,12 @@
   },
   {
     "id": "tapis-caoutchouc-1",
-    "name": "Tapis caoutchouc strié (largeur 180 cm, longueur 10 cm)",
+    "name": "Tapis caoutchouc  (largeur 10 cm, longueur 120 cm)",
     "image": "/assets/Tapis caoutchouc strié (largeur 180 cm, longueur 10 cm).webp"
   },
   {
     "id": "tuyau-arrosage-1",
-    "name": "Tuyau d'arrosage longueur 50 m",
+    "name": "Tuyau d'arrosage longueur",
     "image": "/assets/Tuyau d'arrosage longueur 50 m.webp"
   },
   {
@@ -56,7 +56,7 @@
   },
   {
     "id": "pvc-alimentaire-1",
-    "name": "Tuyau PVC alimentaire longueur 10 m",
+    "name": "Tuyau Polyurethane Flex Ducting",
     "image": "/assets/Tuyau PVC alimentaire longueur 10 m.jpg"
   },
   {
@@ -66,7 +66,7 @@
   },
   {
     "id": "spiral-1",
-    "name": "Spiral",
+    "name": "Tapis caoutchouc strié (largeur 10 cm, longueur 120 cm)",
     "image": "/assets/Spiral.jpg"
   }
 ]
