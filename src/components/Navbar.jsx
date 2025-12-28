@@ -43,8 +43,25 @@ const Navbar = () => {
               <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-industrial-blue to-industrial-dark bg-clip-text text-transparent leading-tight">
                 SONOTIC
               </div>
-              <div className="text-xs font-bold text-gray-600 uppercase tracking-widest">
-                SARLAU
+              <div className="flex items-center gap-2 mt-1">
+                <div className="text-xs font-bold text-gray-600 uppercase tracking-widest">
+                  SARLAU
+                </div>
+                <div className="flex items-center gap-2 ml-2">
+                  <div className="w-5 h-3.5 rounded-sm overflow-hidden shadow-sm border border-gray-200" title="Maroc">
+                    <svg viewBox="0 0 120 80" className="w-full h-full">
+                      <rect width="120" height="80" fill="#C1272D"/>
+                      <path d="M60,15 L66,33 L85,33 L70,45 L76,63 L60,51 L44,63 L50,45 L35,33 L54,33 Z" fill="#006233"/>
+                    </svg>
+                  </div>
+                  <div className="w-5 h-3.5 rounded-sm overflow-hidden shadow-sm border border-gray-200" title="Italie">
+                    <svg viewBox="0 0 3 2" className="w-full h-full">
+                      <rect width="1" height="2" fill="#009246"/>
+                      <rect x="1" width="1" height="2" fill="#FFFFFF"/>
+                      <rect x="2" width="1" height="2" fill="#CE2B37"/>
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
           </Link>
