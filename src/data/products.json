@@ -41,7 +41,7 @@
   },
   {
     "id": "tapis-caoutchouc-1",
-    "name": "Tapis caoutchouc ",
+    "name": "Tapis caoutchouc strié ",
     "image": "/assets/Tapis caoutchouc strié (largeur 180 cm, longueur 10 cm).webp"
   },
   {
@@ -61,12 +61,12 @@
   },
   {
     "id": "tuyau-radiateur-1",
-    "name": "Tuyau radiateur en caoutchouc",
+    "name": "Durite caoutchouc en EPDM",
     "image": "/assets/Tuyau radiateur en caoutchouc.png"
   },
   {
     "id": "spiral-1",
-    "name": "Tapis caoutchouc strié",
+    "name": "Tapis caoutchouc simple",
     "image": "/assets/Spiral.jpg"
   }
 ]
