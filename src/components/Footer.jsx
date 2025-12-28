@@ -43,7 +43,8 @@ const Footer = () => {
                 <span>
                   <a href="tel:+212522244993" className="hover:text-white transition-colors">05 22 24 49 93</a> - 
                   <a href="tel:+212522246623" className="hover:text-white transition-colors"> 05 22 24 66 23</a> - 
-                  <a href="tel:+212522246620" className="hover:text-white transition-colors"> 05 22 24 66 20</a>
+                  <a href="tel:+212522246620" className="hover:text-white transition-colors"> 05 22 24 66 20</a> -
+                  <a href="tel:+212661748378" className="hover:text-white transition-colors"> 06 61 74 83 78</a>
                 </span>
               </p>
               <p className="flex items-center gap-2">
