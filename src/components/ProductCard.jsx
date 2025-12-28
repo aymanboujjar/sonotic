@@ -1,9 +1,7 @@
-import { Link } from 'react-router-dom'
-
 const ProductCard = ({ product }) => {
   return (
-    <article className="card-modern group">
-      <div className="h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 relative">
+    <article className="card-modern group h-full flex flex-col">
+      <div className="h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 relative flex-shrink-0">
         <img
           src={product.image}
           alt={product.name}
@@ -18,21 +16,13 @@ const ProductCard = ({ product }) => {
           </div>
         )}
       </div>
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-industrial-dark mb-3 group-hover:text-industrial-blue transition-colors">
           {product.name}
         </h3>
         {product.description && (
-          <p className="text-gray-600 mb-6 line-clamp-3 leading-relaxed">{product.description}</p>
+          <p className="text-gray-600 line-clamp-3 leading-relaxed flex-grow">{product.description}</p>
         )}
-        <Link
-          to={`/products#${product.id}`}
-          className="inline-flex items-center text-industrial-blue hover:text-industrial-dark font-semibold text-sm transition-all duration-300 group-hover:gap-2 gap-1"
-          aria-label={`Voir les détails de ${product.name}`}
-        >
-          En savoir plus
-          <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-        </Link>
       </div>
     </article>
   )
