@@ -9,7 +9,7 @@ import productsData from '../data/products.json'
 
 const Home = () => {
   // Get first 8 products for preview
-  const featuredProducts = productsData.slice(0, 8)
+  const featuredProducts = productsData.slice(0, 4)
 
   const features = [
     {
@@ -98,7 +98,7 @@ const Home = () => {
             title={<TransText fr={translations.home.productsTitle.fr} ar={translations.home.productsTitle.ar} en={translations.home.productsTitle.en} />}
             subtitle={<TransText fr={translations.home.productsSubtitle.fr} ar={translations.home.productsSubtitle.ar} en={translations.home.productsSubtitle.en} />}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 mb-12">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
