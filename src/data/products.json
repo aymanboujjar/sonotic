@@ -41,12 +41,12 @@
   },
   {
     "id": "tapis-caoutchouc-1",
-    "name": "Tapis caoutchouc  (largeur 10 cm, longueur 120 cm)",
+    "name": "Tapis caoutchouc ",
     "image": "/assets/Tapis caoutchouc strié (largeur 180 cm, longueur 10 cm).webp"
   },
   {
     "id": "tuyau-arrosage-1",
-    "name": "Tuyau d'arrosage longueur",
+    "name": "Tuyau d'arrosage",
     "image": "/assets/Tuyau d'arrosage longueur 50 m.webp"
   },
   {
@@ -66,7 +66,7 @@
   },
   {
     "id": "spiral-1",
-    "name": "Tapis caoutchouc strié (largeur 10 cm, longueur 120 cm)",
+    "name": "Tapis caoutchouc strié",
     "image": "/assets/Spiral.jpg"
   }
 ]
