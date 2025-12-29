@@ -33,9 +33,9 @@ export const translations = {
       en: 'For over 25 years, SONOTIC has been the trusted partner for all your industrial pipe needs in Morocco. We provide durable and efficient solutions for water supply, sanitation, irrigation, and industrial infrastructure.',
     },
     intro2: {
-      fr: "Notre expertise couvre une large gamme de matériaux : PVC, HDPE, acier et béton, répondant aux normes internationales les plus strictes.",
+      fr: "Notre expertise couvre une large gamme de matériaux : PVC, HDPE, acier et béton, répondant aux normes internationales et marocaines les plus strictes.",
       ar: 'تغطي خبرتنا مجموعة واسعة من المواد: PVC و HDPE والصلب والخرسانة، متوافقة مع أشد المعايير الدولية صرامة.',
-      en: 'Our expertise covers a wide range of materials: PVC, HDPE, steel, and concrete, meeting the strictest international standards.',
+      en: 'Our expertise covers a wide range of materials: PVC, HDPE, steel, and concrete, meeting the strictest international and Moroccan standards.',
     },
     productsTitle: {
       fr: 'Nos Produits',
@@ -66,9 +66,9 @@ export const translations = {
       quality: {
         title: { fr: 'Qualité Certifiée', ar: 'جودة معتمدة', en: 'Certified Quality' },
         desc: {
-          fr: 'Produits conformes aux normes internationales ISO 9001',
-          ar: 'منتجات متوافقة مع المعايير الدولية ISO 9001',
-          en: 'Products compliant with international ISO 9001 standards',
+          fr: 'Produits conformes aux normes internationales et marocaines ISO 9001',
+          ar: 'منتجات متوافقة مع المعايير الدولية والمغربية ISO 9001',
+          en: 'Products compliant with international and Moroccan ISO 9001 standards',
         },
       },
       delivery: {
@@ -221,9 +221,9 @@ export const translations = {
       quality: {
         title: { fr: 'Qualité', ar: 'الجودة', en: 'Quality' },
         desc: {
-          fr: 'Produits certifiés selon les normes internationales',
-          ar: 'منتجات معتمدة وفق المعايير الدولية',
-          en: 'Products certified according to international standards',
+          fr: 'Produits certifiés selon les normes internationales et marocaines',
+          ar: 'منتجات معتمدة وفق المعايير الدولية والمغربية',
+          en: 'Products certified according to international and Moroccan standards',
         },
       },
       reliability: {
@@ -257,9 +257,9 @@ export const translations = {
       en: 'Local Expertise, International Standards',
     },
     expertise: {
-      fr: "En tant qu'entreprise marocaine, nous comprenons parfaitement les défis et les besoins spécifiques du marché local. Notre connaissance approfondie du terrain, combinée à notre respect des normes internationales, nous permet d'offrir des solutions adaptées et performantes pour tous vos projets d'infrastructure au Maroc.",
-      ar: 'كشركة مغربية، نفهم تماماً التحديات والاحتياجات الخاصة بالسوق المحلي. معرفتنا العميقة بالمجال، إلى جانب احترامنا للمعايير الدولية، تسمح لنا بتقديم حلول مناسبة وفعالة لجميع مشاريع البنية التحتية الخاصة بك في المغرب.',
-      en: 'As a Moroccan company, we perfectly understand the challenges and specific needs of the local market. Our deep knowledge of the field, combined with our respect for international standards, allows us to offer suitable and efficient solutions for all your infrastructure projects in Morocco.',
+      fr: "En tant qu'entreprise marocaine, nous comprenons parfaitement les défis et les besoins spécifiques du marché local. Notre connaissance approfondie du terrain, combinée à notre respect des normes internationales et marocaines, nous permet d'offrir des solutions adaptées et performantes pour tous vos projets d'infrastructure au Maroc.",
+      ar: 'كشركة مغربية، نفهم تماماً التحديات والاحتياجات الخاصة بالسوق المحلي. معرفتنا العميقة بالمجال، إلى جانب احترامنا للمعايير الدولية والمغربية، تسمح لنا بتقديم حلول مناسبة وفعالة لجميع مشاريع البنية التحتية الخاصة بك في المغرب.',
+      en: 'As a Moroccan company, we perfectly understand the challenges and specific needs of the local market. Our deep knowledge of the field, combined with our respect for international and Moroccan standards, allows us to offer suitable and efficient solutions for all your infrastructure projects in Morocco.',
     },
   },
   projects: {
