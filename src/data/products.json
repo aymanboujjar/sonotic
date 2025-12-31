@@ -68,5 +68,10 @@
     "id": "spiral-1",
     "name": "Tapis caoutchouc simple S.B.R",
     "image": "/assets/Spiral.jpg"
+  },
+  {
+    "id": "tuyaux-orange-winner",
+    "name": "Tuyaux orange winner",
+    "image": "/assets/tuyaux orange winner.jpeg"
   }
 ]
