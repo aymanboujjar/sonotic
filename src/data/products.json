@@ -76,12 +76,27 @@
   },
   {
     "id": "tapis en caoutchouc à pastilles",
-    "name": "tapis en caoutchouc à pastilles",
+    "name": "Tapis en caoutchouc à pastilles",
     "image": "/assets/tapis en caoutchouc à pastilles.png"
   },
   {
     "id": "collier de serrage",
     "name": "Collier de serrage",
     "image": "/assets/collier de serrage.jpg"
+  },
+  {
+    "id": "tuyau-flexible-hydraulique",
+    "name": "Tuyau-flexible-hydraulique",
+    "image": "/assets/tuyau-flexible-hydraulique.jpg"
+  },
+  {
+    "id": " tuyau d'aspiration et de refoulement EPDM",
+    "name": "Tuyau d'aspiration et de refoulement EPDM",
+    "image": "/assets/tuyau d'aspiration et de refoulement EPDM.jpg"
+  },
+  {
+    "id": "tuyau plat",
+    "name": "Tuyau plat",
+    "image": "/assets/tuyau plat.jpg"
   }
 ]
