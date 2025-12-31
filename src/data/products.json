@@ -73,5 +73,15 @@
     "id": "tuyaux-orange-winner",
     "name": "Tuyaux orange winner",
     "image": "/assets/tuyaux orange winner.jpeg"
+  },
+  {
+    "id": "tapis en caoutchouc à pastilles",
+    "name": "tapis en caoutchouc à pastilles",
+    "image": "/assets/tapis en caoutchouc à pastilles.png"
+  },
+  {
+    "id": "collier de serrage",
+    "name": "Collier de serrage",
+    "image": "/assets/collier de serrage.jpg"
   }
 ]
