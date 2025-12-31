@@ -51,7 +51,7 @@
   },
   {
     "id": "tuyau-janica-1",
-    "name": "Tuyau Jamaica",
+    "name": "Tuyau Pompier plat",
     "image": "/assets/Tuyau Jamaica"
   },
   {
@@ -80,24 +80,14 @@
     "image": "/assets/tapis en caoutchouc à pastilles.png"
   },
   {
-    "id": "collier de serrage",
-    "name": "Collier de serrage",
+    "id": "Collier de serrage a griffe",
+    "name": "Collier de serrage a griffe",
     "image": "/assets/collier de serrage.jpg"
   },
   {
-    "id": "tuyau-flexible-hydraulique",
-    "name": "Tuyau-flexible-hydraulique",
-    "image": "/assets/tuyau-flexible-hydraulique.jpg"
-  },
-  {
-    "id": " tuyau d'aspiration et de refoulement EPDM",
-    "name": "Tuyau d'aspiration et de refoulement EPDM",
-    "image": "/assets/tuyau d'aspiration et de refoulement EPDM.jpg"
-  },
-  {
-    "id": "tuyau plat",
-    "name": "Tuyau plat",
-    "image": "/assets/tuyau plat.jpg"
+    "id": "ruban adhésif en mousse de caoutchouc",
+    "name": "ruban adhésif en mousse de caoutchouc",
+    "image": "/assets/ruban adhésif en mousse de caoutchouc.jpg"
   },
   {
     "id": "rouleau de feuille de mousse de caoutchouc EPDMnéoprène",
@@ -108,10 +98,5 @@
     "id": "tuyau d'aspiration universel renforcé",
     "name": "tuyau d'aspiration universel renforcé",
     "image": "/assets/tuyau d'aspiration universel renforcé.webp"
-  },
-  {
-    "id": "ruban adhésif en mousse de caoutchouc",
-    "name": "ruban adhésif en mousse de caoutchouc",
-    "image": "/assets/ruban adhésif en mousse de caoutchouc.jpg"
   }
 ]
