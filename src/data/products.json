@@ -98,5 +98,20 @@
     "id": "tuyau plat",
     "name": "Tuyau plat",
     "image": "/assets/tuyau plat.jpg"
+  },
+  {
+    "id": "rouleau de feuille de mousse de caoutchouc EPDMnéoprène",
+    "name": "rouleau de feuille de mousse de caoutchouc EPDMnéoprène",
+    "image": "/assets/rouleau de feuille de mousse de caoutchouc EPDMnéoprène.jpg"
+  },
+  {
+    "id": "tuyau d'aspiration universel renforcé",
+    "name": "tuyau d'aspiration universel renforcé",
+    "image": "/assets/tuyau d'aspiration universel renforcé.webp"
+  },
+  {
+    "id": "ruban adhésif en mousse de caoutchouc",
+    "name": "ruban adhésif en mousse de caoutchouc",
+    "image": "/assets/ruban adhésif en mousse de caoutchouc.jpg"
   }
 ]

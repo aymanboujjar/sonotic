@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import SectionTitle from '../components/SectionTitle'
 import ProductCard from '../components/ProductCard'
@@ -10,6 +10,8 @@ import productsData from '../data/products.json'
 const Products = () => {
   const { selectedLanguage } = useLanguage()
   const [selectedType, setSelectedType] = useState(translations.products.all[selectedLanguage])
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 9
 
   // Get unique product types (only if products have type field)
   const productTypes = [
@@ -22,6 +24,22 @@ const Products = () => {
     selectedType === translations.products.all[selectedLanguage]
       ? productsData
       : productsData.filter((p) => p.type === selectedType)
+
+  // Reset to page 1 when filter changes
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [selectedType])
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage)
+  const startIndex = (currentPage - 1) * itemsPerPage
+  const endIndex = startIndex + itemsPerPage
+  const currentProducts = filteredProducts.slice(startIndex, endIndex)
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -106,12 +124,67 @@ const Products = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProducts.map((product) => (
+            {currentProducts.map((product) => (
               <div key={product.id} id={product.id}>
                 <ProductCard product={product} />
               </div>
             ))}
           </div>
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div className="mt-12 flex flex-col items-center gap-4">
+              <div className="flex items-center gap-2 flex-wrap justify-center">
+                <button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="w-10 h-10 flex items-center justify-center rounded-lg bg-industrial-blue text-white font-medium transition-all duration-300 hover:bg-industrial-dark disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-industrial-blue"
+                  aria-label="Previous page"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                
+                <div className="flex items-center gap-2 flex-wrap justify-center">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    <button
+                      key={page}
+                      onClick={() => handlePageChange(page)}
+                      className={`w-10 h-10 rounded-lg font-medium transition-all duration-300 ${
+                        currentPage === page
+                          ? 'bg-industrial-blue text-white shadow-lg scale-110'
+                          : 'bg-white text-industrial-dark hover:bg-gray-100 border border-gray-200'
+                      }`}
+                      aria-label={`Page ${page}`}
+                      aria-current={currentPage === page ? 'page' : undefined}
+                    >
+                      {page}
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className="w-10 h-10 flex items-center justify-center rounded-lg bg-industrial-blue text-white font-medium transition-all duration-300 hover:bg-industrial-dark disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-industrial-blue"
+                  aria-label="Next page"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+              
+              <p className="text-gray-600 text-sm">
+                <TransText
+                  fr={`Page ${currentPage} sur ${totalPages}`}
+                  ar={`الصفحة ${currentPage} من ${totalPages}`}
+                  en={`Page ${currentPage} of ${totalPages}`}
+                />
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
