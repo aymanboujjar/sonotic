@@ -98,5 +98,15 @@
     "id": "tuyau d'aspiration universel renforcé",
     "name": "tuyau d'aspiration universel renforcé",
     "image": "/assets/tuyau d'aspiration universel renforcé.webp"
+  },
+  {
+    "id" :"Bouchon raccord",
+    "name":"Bouchon raccord",
+    "image":"/assets/Bouchon_raccord.webp"
+  },
+  {
+    "id":"Raccord Viltage",
+    "name":"raccord viltage",
+    "image":"/assets/raccord_viltage.jpg"
   }
 ]
